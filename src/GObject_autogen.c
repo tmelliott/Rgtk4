@@ -1735,7 +1735,7 @@ SEXP R_g_value_get_double(SEXP s1) {
   gdouble _ret = (gdouble)g_value_get_double(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -1783,7 +1783,7 @@ SEXP R_g_value_get_float(SEXP s1) {
   gfloat _ret = (gfloat)g_value_get_float(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }

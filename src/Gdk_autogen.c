@@ -1813,12 +1813,12 @@ SEXP R_gdk_device_get_surface_at_position(SEXP s1) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("Surface"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("result"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_win_x)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_win_x)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
   SET_STRING_ELT(_ans_names, 1, Rf_mkChar("win_x"));
-  SET_VECTOR_ELT(_ans, 2, Rf_ScalarInteger((int)(_out_win_y)));
+  SET_VECTOR_ELT(_ans, 2, Rf_ScalarReal((double)(_out_win_y)));
   if (VECTOR_ELT(_ans, 2) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 2), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -3143,7 +3143,7 @@ SEXP R_gdk_event_get_axis(SEXP s1, SEXP s2) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gboolean"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("result"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_value)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_value)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -3309,12 +3309,12 @@ SEXP R_gdk_event_get_position(SEXP s1) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gboolean"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("result"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_x)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_x)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
   SET_STRING_ELT(_ans_names, 1, Rf_mkChar("x"));
-  SET_VECTOR_ELT(_ans, 2, Rf_ScalarInteger((int)(_out_y)));
+  SET_VECTOR_ELT(_ans, 2, Rf_ScalarReal((double)(_out_y)));
   if (VECTOR_ELT(_ans, 2) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 2), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -3533,7 +3533,7 @@ SEXP R_gdk_frame_clock_get_fps(SEXP s1) {
   double _ret = (double)gdk_frame_clock_get_fps(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -4830,7 +4830,7 @@ SEXP R_gdk_pad_event_get_axis_value(SEXP s1) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("guint"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("index"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_value)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_value)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -4912,12 +4912,12 @@ SEXP R_gdk_paintable_compute_concrete_size(SEXP s1, SEXP s2, SEXP s3, SEXP s4, S
   gdk_paintable_compute_concrete_size(v1, v2, v3, v4, v5, &_out_concrete_width, &_out_concrete_height);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 2));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 2));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_out_concrete_width)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_out_concrete_width)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("concrete_width"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_concrete_height)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_concrete_height)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -4968,7 +4968,7 @@ SEXP R_gdk_paintable_get_intrinsic_aspect_ratio(SEXP s1) {
   double _ret = (double)gdk_paintable_get_intrinsic_aspect_ratio(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -5658,12 +5658,12 @@ SEXP R_gdk_scroll_event_get_deltas(SEXP s1) {
   gdk_scroll_event_get_deltas(v1, &_out_delta_x, &_out_delta_y);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 2));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 2));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_out_delta_x)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_out_delta_x)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("delta_x"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_delta_y)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_delta_y)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -6002,12 +6002,12 @@ SEXP R_gdk_surface_get_device_position(SEXP s1, SEXP s2) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gboolean"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("result"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_x)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_x)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
   SET_STRING_ELT(_ans_names, 1, Rf_mkChar("x"));
-  SET_VECTOR_ELT(_ans, 2, Rf_ScalarInteger((int)(_out_y)));
+  SET_VECTOR_ELT(_ans, 2, Rf_ScalarReal((double)(_out_y)));
   if (VECTOR_ELT(_ans, 2) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 2), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -6097,7 +6097,7 @@ SEXP R_gdk_surface_get_scale(SEXP s1) {
   double _ret = (double)gdk_surface_get_scale(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -6234,12 +6234,12 @@ SEXP R_gdk_surface_translate_coordinates(SEXP s1, SEXP s2) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gboolean"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("result"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_x)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_x)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
   SET_STRING_ELT(_ans_names, 1, Rf_mkChar("x"));
-  SET_VECTOR_ELT(_ans, 2, Rf_ScalarInteger((int)(_out_y)));
+  SET_VECTOR_ELT(_ans, 2, Rf_ScalarReal((double)(_out_y)));
   if (VECTOR_ELT(_ans, 2) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 2), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -7108,12 +7108,12 @@ SEXP R_gdk_touchpad_event_get_deltas(SEXP s1) {
   gdk_touchpad_event_get_deltas(v1, &_out_dx, &_out_dy);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 2));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 2));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_out_dx)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_out_dx)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("dx"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_dy)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_dy)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -7164,7 +7164,7 @@ SEXP R_gdk_touchpad_event_get_pinch_angle_delta(SEXP s1) {
   double _ret = (double)gdk_touchpad_event_get_pinch_angle_delta(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }
@@ -7181,7 +7181,7 @@ SEXP R_gdk_touchpad_event_get_pinch_scale(SEXP s1) {
   double _ret = (double)gdk_touchpad_event_get_pinch_scale(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gdouble"));
   }

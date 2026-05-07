@@ -273,7 +273,7 @@ SEXP R_gsk_blur_node_get_radius(SEXP s1) {
   float _ret = (float)gsk_blur_node_get_radius(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -641,7 +641,7 @@ SEXP R_gsk_conic_gradient_node_get_angle(SEXP s1) {
   float _ret = (float)gsk_conic_gradient_node_get_angle(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -722,7 +722,7 @@ SEXP R_gsk_conic_gradient_node_get_rotation(SEXP s1) {
   float _ret = (float)gsk_conic_gradient_node_get_rotation(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -828,7 +828,7 @@ SEXP R_gsk_cross_fade_node_get_progress(SEXP s1) {
   float _ret = (float)gsk_cross_fade_node_get_progress(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1093,7 +1093,7 @@ SEXP R_gsk_gl_shader_get_arg_float(SEXP s1, SEXP s2, SEXP s3) {
   float _ret = (float)gsk_gl_shader_get_arg_float(v1, v2, v3);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1432,7 +1432,7 @@ SEXP R_gsk_inset_shadow_node_get_blur_radius(SEXP s1) {
   float _ret = (float)gsk_inset_shadow_node_get_blur_radius(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1473,7 +1473,7 @@ SEXP R_gsk_inset_shadow_node_get_dx(SEXP s1) {
   float _ret = (float)gsk_inset_shadow_node_get_dx(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1490,7 +1490,7 @@ SEXP R_gsk_inset_shadow_node_get_dy(SEXP s1) {
   float _ret = (float)gsk_inset_shadow_node_get_dy(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1524,7 +1524,7 @@ SEXP R_gsk_inset_shadow_node_get_spread(SEXP s1) {
   float _ret = (float)gsk_inset_shadow_node_get_spread(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1772,7 +1772,7 @@ SEXP R_gsk_opacity_node_get_opacity(SEXP s1) {
   float _ret = (float)gsk_opacity_node_get_opacity(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1811,7 +1811,7 @@ SEXP R_gsk_outset_shadow_node_get_blur_radius(SEXP s1) {
   float _ret = (float)gsk_outset_shadow_node_get_blur_radius(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1852,7 +1852,7 @@ SEXP R_gsk_outset_shadow_node_get_dx(SEXP s1) {
   float _ret = (float)gsk_outset_shadow_node_get_dx(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1869,7 +1869,7 @@ SEXP R_gsk_outset_shadow_node_get_dy(SEXP s1) {
   float _ret = (float)gsk_outset_shadow_node_get_dy(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1903,7 +1903,7 @@ SEXP R_gsk_outset_shadow_node_get_spread(SEXP s1) {
   float _ret = (float)gsk_outset_shadow_node_get_spread(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -1991,7 +1991,7 @@ SEXP R_gsk_radial_gradient_node_get_end(SEXP s1) {
   float _ret = (float)gsk_radial_gradient_node_get_end(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -2008,7 +2008,7 @@ SEXP R_gsk_radial_gradient_node_get_hradius(SEXP s1) {
   float _ret = (float)gsk_radial_gradient_node_get_hradius(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -2042,7 +2042,7 @@ SEXP R_gsk_radial_gradient_node_get_start(SEXP s1) {
   float _ret = (float)gsk_radial_gradient_node_get_start(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -2059,7 +2059,7 @@ SEXP R_gsk_radial_gradient_node_get_vradius(SEXP s1) {
   float _ret = (float)gsk_radial_gradient_node_get_vradius(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -2952,7 +2952,7 @@ SEXP R_gsk_stroke_get_dash_offset(SEXP s1) {
   float _ret = (float)gsk_stroke_get_dash_offset(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -3003,7 +3003,7 @@ SEXP R_gsk_stroke_get_line_width(SEXP s1) {
   float _ret = (float)gsk_stroke_get_line_width(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -3020,7 +3020,7 @@ SEXP R_gsk_stroke_get_miter_limit(SEXP s1) {
   float _ret = (float)gsk_stroke_get_miter_limit(v1);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 1));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 1));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_ret)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_ret)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -3668,32 +3668,32 @@ SEXP R_gsk_transform_to_2d(SEXP s1) {
   gsk_transform_to_2d(v1, &_out_out_xx, &_out_out_yx, &_out_out_xy, &_out_out_yy, &_out_out_dx, &_out_out_dy);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 6));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 6));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_out_out_xx)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_out_out_xx)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("out_xx"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_out_yx)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_out_yx)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 1, Rf_mkChar("out_yx"));
-  SET_VECTOR_ELT(_ans, 2, Rf_ScalarInteger((int)(_out_out_xy)));
+  SET_VECTOR_ELT(_ans, 2, Rf_ScalarReal((double)(_out_out_xy)));
   if (VECTOR_ELT(_ans, 2) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 2), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 2, Rf_mkChar("out_xy"));
-  SET_VECTOR_ELT(_ans, 3, Rf_ScalarInteger((int)(_out_out_yy)));
+  SET_VECTOR_ELT(_ans, 3, Rf_ScalarReal((double)(_out_out_yy)));
   if (VECTOR_ELT(_ans, 3) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 3), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 3, Rf_mkChar("out_yy"));
-  SET_VECTOR_ELT(_ans, 4, Rf_ScalarInteger((int)(_out_out_dx)));
+  SET_VECTOR_ELT(_ans, 4, Rf_ScalarReal((double)(_out_out_dx)));
   if (VECTOR_ELT(_ans, 4) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 4), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 4, Rf_mkChar("out_dx"));
-  SET_VECTOR_ELT(_ans, 5, Rf_ScalarInteger((int)(_out_out_dy)));
+  SET_VECTOR_ELT(_ans, 5, Rf_ScalarReal((double)(_out_out_dy)));
   if (VECTOR_ELT(_ans, 5) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 5), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -3717,37 +3717,37 @@ SEXP R_gsk_transform_to_2d_components(SEXP s1) {
   gsk_transform_to_2d_components(v1, &_out_out_skew_x, &_out_out_skew_y, &_out_out_scale_x, &_out_out_scale_y, &_out_out_angle, &_out_out_dx, &_out_out_dy);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 7));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 7));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_out_out_skew_x)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_out_out_skew_x)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("out_skew_x"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_out_skew_y)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_out_skew_y)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 1, Rf_mkChar("out_skew_y"));
-  SET_VECTOR_ELT(_ans, 2, Rf_ScalarInteger((int)(_out_out_scale_x)));
+  SET_VECTOR_ELT(_ans, 2, Rf_ScalarReal((double)(_out_out_scale_x)));
   if (VECTOR_ELT(_ans, 2) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 2), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 2, Rf_mkChar("out_scale_x"));
-  SET_VECTOR_ELT(_ans, 3, Rf_ScalarInteger((int)(_out_out_scale_y)));
+  SET_VECTOR_ELT(_ans, 3, Rf_ScalarReal((double)(_out_out_scale_y)));
   if (VECTOR_ELT(_ans, 3) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 3), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 3, Rf_mkChar("out_scale_y"));
-  SET_VECTOR_ELT(_ans, 4, Rf_ScalarInteger((int)(_out_out_angle)));
+  SET_VECTOR_ELT(_ans, 4, Rf_ScalarReal((double)(_out_out_angle)));
   if (VECTOR_ELT(_ans, 4) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 4), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 4, Rf_mkChar("out_angle"));
-  SET_VECTOR_ELT(_ans, 5, Rf_ScalarInteger((int)(_out_out_dx)));
+  SET_VECTOR_ELT(_ans, 5, Rf_ScalarReal((double)(_out_out_dx)));
   if (VECTOR_ELT(_ans, 5) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 5), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 5, Rf_mkChar("out_dx"));
-  SET_VECTOR_ELT(_ans, 6, Rf_ScalarInteger((int)(_out_out_dy)));
+  SET_VECTOR_ELT(_ans, 6, Rf_ScalarReal((double)(_out_out_dy)));
   if (VECTOR_ELT(_ans, 6) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 6), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -3768,22 +3768,22 @@ SEXP R_gsk_transform_to_affine(SEXP s1) {
   gsk_transform_to_affine(v1, &_out_out_scale_x, &_out_out_scale_y, &_out_out_dx, &_out_out_dy);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 4));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 4));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_out_out_scale_x)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_out_out_scale_x)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("out_scale_x"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_out_scale_y)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_out_scale_y)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 1, Rf_mkChar("out_scale_y"));
-  SET_VECTOR_ELT(_ans, 2, Rf_ScalarInteger((int)(_out_out_dx)));
+  SET_VECTOR_ELT(_ans, 2, Rf_ScalarReal((double)(_out_out_dx)));
   if (VECTOR_ELT(_ans, 2) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 2), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 2, Rf_mkChar("out_dx"));
-  SET_VECTOR_ELT(_ans, 3, Rf_ScalarInteger((int)(_out_out_dy)));
+  SET_VECTOR_ELT(_ans, 3, Rf_ScalarReal((double)(_out_out_dy)));
   if (VECTOR_ELT(_ans, 3) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 3), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
@@ -3837,12 +3837,12 @@ SEXP R_gsk_transform_to_translate(SEXP s1) {
   gsk_transform_to_translate(v1, &_out_out_dx, &_out_out_dy);
   SEXP _ans = PROTECT(Rf_allocVector(VECSXP, 2));
   SEXP _ans_names = PROTECT(Rf_allocVector(STRSXP, 2));
-  SET_VECTOR_ELT(_ans, 0, Rf_ScalarInteger((int)(_out_out_dx)));
+  SET_VECTOR_ELT(_ans, 0, Rf_ScalarReal((double)(_out_out_dx)));
   if (VECTOR_ELT(_ans, 0) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 0), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
   SET_STRING_ELT(_ans_names, 0, Rf_mkChar("out_dx"));
-  SET_VECTOR_ELT(_ans, 1, Rf_ScalarInteger((int)(_out_out_dy)));
+  SET_VECTOR_ELT(_ans, 1, Rf_ScalarReal((double)(_out_out_dy)));
   if (VECTOR_ELT(_ans, 1) != R_NilValue) {
     Rf_setAttrib(VECTOR_ELT(_ans, 1), Rf_install("glib_type"), Rf_mkString("gfloat"));
   }
