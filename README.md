@@ -111,6 +111,16 @@ gSignalConnectR(button, "clicked", function(w) {
 gtkWindowPresent(window)
 ```
 
+<div class="figure">
+
+<img src="man/figures/Rgtk4.png" alt="The Rgtk4 window from above on Mac." width="100%" />
+<p class="caption">
+
+The Rgtk4 window from above on Mac.
+</p>
+
+</div>
+
 ## Architecture
 
 Rgtk4 uses a two-package architecture:
@@ -149,9 +159,19 @@ helper functions or improve the generator.
 
 GPL-2 \| GPL-3 (following R and GTK licensing)
 
-## Version
+## Distribution
 
-0.1.0 - Initial release
+Rgtk4 is not on CRAN or r-universe. Building Rgtk4 does not bundle GTK4
+— the resulting binaries link dynamically against a system installation
+of GTK4 and will not work without one. On Windows this is a particular
+challenge: GTK4 is only available through environments like MSYS2, and
+it is unclear whether any current CRAN package takes that route. There
+are also minor compliance points such as compiler warning suppressions
+that would need addressing before a CRAN submission, though none of
+these are fundamental blockers. Getting a package onto CRAN requires
+sustained engagement with the submission and review process, and without
+sufficient external pressure or demand that investment is unlikely to
+happen.
 
 ## System Requirements
 

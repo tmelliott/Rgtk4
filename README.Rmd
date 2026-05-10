@@ -60,6 +60,8 @@ Afterwards add the following to the PATH = `C:\msys64\ucrt64\bin` (or wherever `
 
 ### Building Rgtk4
 
+This is only required for package maintenance, users should not have to regenerate the bindings. This builds the auto generated C and R files.
+
 1. **Generate Bindings** (RGirGen package)
 
 This creates all auto-generated bindings in the Rgtk4 package.
@@ -104,6 +106,11 @@ gSignalConnectR(button, "clicked", function(w) {
 gtkWindowPresent(window)
 ```
 
+
+```{r echo = FALSE, warning = FALSE, fig.cap="The Rgtk4 window from above on Mac."}
+knitr::include_graphics("man/figures/Rgtk4.png")
+```
+
 ## Architecture
 
 Rgtk4 uses a two-package architecture:
@@ -134,9 +141,9 @@ Contributions welcome! The clean architecture makes it easy to add new helper fu
 
 GPL-2 | GPL-3 (following R and GTK licensing)
 
-## Version
+## Distribution
 
-0.1.0 - Initial release
+Rgtk4 is not on CRAN or r-universe. Building Rgtk4 does not bundle GTK4 — the resulting binaries link dynamically against a system installation of GTK4 and will not work without one. On Windows this is a particular challenge: GTK4 is only available through environments like MSYS2, and it is unclear whether any current CRAN package takes that route. There are also minor compliance points such as compiler warning suppressions that would need addressing before a CRAN submission, though none of these are fundamental blockers. Getting a package onto CRAN requires sustained engagement with the submission and review process, and without sufficient external pressure or demand that investment is unlikely to happen.
 
 ## System Requirements
 
