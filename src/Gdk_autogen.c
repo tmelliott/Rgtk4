@@ -2,6 +2,9 @@
 #include <R.h>
 #include <Rinternals.h>
 #include <gtk/gtk.h>
+#ifdef HAVE_GTKSOURCE
+#include <gtksourceview/gtksource.h>
+#endif
 #include <glib.h>
 #include <stdint.h>
 #include <string.h>

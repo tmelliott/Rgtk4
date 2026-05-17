@@ -22,7 +22,7 @@ if [ "$PKGCONFIG_CFLAGS" ] && [ "$PKGCONFIG_LIBS" ]; then
   PKG_LIBS="${PKGCONFIG_LIBS}"
 else
   echo "pkg-config not found or failed, trying fallback..."
-  
+
   # Try common install locations
   if [ -d /usr/local/include/gtk-4.0 ]; then
     PKG_CFLAGS="-I/usr/local/include/gtk-4.0 -I/usr/local/include/glib-2.0 -I/usr/local/lib/glib-2.0/include"
@@ -40,6 +40,31 @@ else
     echo "------------------------------------------------------------------------"
     exit 1
   fi
+fi
+
+# Optional dependency: GtkSourceView 4. The source-editor bindings
+# (GtkSource_autogen.c and the GtkSource callback trampolines) are compiled
+# only when this is present. Absence is not an error - the rest of Rgtk4
+# builds normally and gtkSource* functions raise a clear error at runtime.
+GTKSOURCE_CFLAGS=""
+GTKSOURCE_LIBS=""
+if [ $(command -v pkg-config) ]; then
+  if pkg-config --exists gtksourceview-5 2>/dev/null; then
+    GTKSOURCE_CFLAGS=$(pkg-config --cflags gtksourceview-5 2>/dev/null)
+    GTKSOURCE_LIBS=$(pkg-config --libs gtksourceview-5 2>/dev/null)
+  fi
+fi
+
+if [ "$GTKSOURCE_LIBS" ]; then
+  echo "Found GtkSourceView 4 - source-editor bindings enabled."
+  PKG_CFLAGS="${PKG_CFLAGS} ${GTKSOURCE_CFLAGS} -DHAVE_GTKSOURCE"
+  PKG_LIBS="${PKG_LIBS} ${GTKSOURCE_LIBS}"
+else
+  echo "GtkSourceView 4 not found - source-editor bindings disabled."
+  echo "  To enable them, install:"
+  echo "   * deb:  libgtksourceview-5-dev"
+  echo "   * rpm:  gtksourceview5-devel"
+  echo "   * brew: gtksourceview5"
 fi
 
 # Write to src/Makevars

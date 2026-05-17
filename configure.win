@@ -75,6 +75,28 @@ if [ -z "$PKG_CFLAGS" ]; then
   PKG_LIBS="${PKG_LIBS} -lintl -lwinmm"
 fi
 
+# Optional dependency: GtkSourceView 4. Probed separately so its absence
+# never fails the build. When present, the source-editor bindings compile
+# in; when absent, gtkSource* functions raise a clear error at runtime.
+GTKSOURCE_CFLAGS=""
+GTKSOURCE_LIBS=""
+if command -v "$PKGCONFIG" >/dev/null 2>&1; then
+  if "$PKGCONFIG" --exists gtksourceview-5 2>/dev/null; then
+    GTKSOURCE_CFLAGS=$("$PKGCONFIG" --cflags gtksourceview-5 2>/dev/null)
+    GTKSOURCE_LIBS=$("$PKGCONFIG" --libs gtksourceview-5 2>/dev/null)
+  fi
+fi
+
+if [ "$GTKSOURCE_LIBS" ]; then
+  echo "Found GtkSourceView 4 - source-editor bindings enabled."
+  PKG_CFLAGS="${PKG_CFLAGS} ${GTKSOURCE_CFLAGS} -DHAVE_GTKSOURCE"
+  PKG_LIBS="${PKG_LIBS} ${GTKSOURCE_LIBS}"
+else
+  echo "GtkSourceView 4 not found - source-editor bindings disabled."
+  echo "  To enable them, in the 'MSYS2 ucrt64' terminal run:"
+  echo "   pacman -S mingw-w64-ucrt-x86_64-gtksourceview5"
+fi
+
 # Windows-specific flags
 PKG_CFLAGS="${PKG_CFLAGS} -DWIN32"
 PKG_LIBS="${PKG_LIBS} -Wl,--export-all-symbols -Wl,--enable-auto-import"

@@ -2,6 +2,9 @@
 #include <R.h>
 #include <Rinternals.h>
 #include <gtk/gtk.h>
+#ifdef HAVE_GTKSOURCE
+#include <gtksourceview/gtksource.h>
+#endif
 #include <glib.h>
 #include <glib-object.h>
 #include <gio/gio.h>
@@ -462,7 +465,7 @@ void _rgtk4_cb_SourceDisposeFunc(GSource* source) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_SourceDummyMarshal() {
+void _rgtk4_cb_SourceDummyMarshal(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -518,7 +521,7 @@ void _rgtk4_cb_TestFixtureFunc(gpointer fixture, gconstpointer user_data) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_TestFunc() {
+void _rgtk4_cb_TestFunc(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -540,7 +543,7 @@ gpointer _rgtk4_cb_ThreadFunc(gpointer data) {
   UNPROTECT(1);
   return _result;
 }
-GMutex* _rgtk4_cb_mutex_new() {
+GMutex* _rgtk4_cb_mutex_new(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GMutex* _result = (GMutex*)(_r == R_NilValue ? NULL : R_ExternalPtrAddr(_r));
@@ -577,7 +580,7 @@ void _rgtk4_cb_mutex_free(GMutex* mutex) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-GCond* _rgtk4_cb_cond_new() {
+GCond* _rgtk4_cb_cond_new(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GCond* _result = (GCond*)(_r == R_NilValue ? NULL : R_ExternalPtrAddr(_r));
@@ -649,7 +652,7 @@ void _rgtk4_cb_private_set(GPrivate* private_key, gpointer data) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_thread_yield() {
+void _rgtk4_cb_thread_yield(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -660,7 +663,7 @@ void _rgtk4_cb_thread_join(gpointer thread) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_thread_exit() {
+void _rgtk4_cb_thread_exit(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -709,7 +712,7 @@ gboolean _rgtk4_cb_TraverseNodeFunc(GTreeNode* node, gpointer data) {
   UNPROTECT(2);
   return _result;
 }
-void _rgtk4_cb_VoidFunc() {
+void _rgtk4_cb_VoidFunc(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -754,7 +757,7 @@ void _rgtk4_cb_BoxedFreeFunc(gpointer boxed) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_Callback() {
+void _rgtk4_cb_Callback(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -1015,19 +1018,19 @@ void _rgtk4_cb_unload(GTypeModule* module) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_reserved1() {
+void _rgtk4_cb_reserved1(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb_reserved2() {
+void _rgtk4_cb_reserved2(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb_reserved3() {
+void _rgtk4_cb_reserved3(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb_reserved4() {
+void _rgtk4_cb_reserved4(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -1135,13 +1138,20 @@ void _rgtk4_cb_WeakNotify(gpointer data, GObject* where_the_object_was) {
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_activate(GtkListBoxRow* row) {
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_activate(GtkSourceGutterRenderer* renderer, GtkTextIter* iter, GdkRectangle* area, guint button, GdkModifierType state, gint n_presses) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
-  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)row, R_NilValue, R_NilValue));
-  SEXP _argv[1] = { _a1 };
-  (void)rgtk4_eval_callback(rc, 1, _argv);
-  UNPROTECT(1);
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)iter, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)area, R_NilValue, R_NilValue));
+  SEXP _a4 = PROTECT(Rf_ScalarInteger((int)(size_t)(button)));
+  SEXP _a5 = PROTECT(Rf_ScalarInteger((int)(size_t)(state)));
+  SEXP _a6 = PROTECT(Rf_ScalarInteger((int)(size_t)(n_presses)));
+  SEXP _argv[6] = { _a1, _a2, _a3, _a4, _a5, _a6 };
+  (void)rgtk4_eval_callback(rc, 6, _argv);
+  UNPROTECT(6);
 }
+#endif /* HAVE_GTKSOURCE */
 void _rgtk4_cb_change_state(GAction* action, GVariant* value) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)action, R_NilValue, R_NilValue));
@@ -1561,15 +1571,15 @@ void _rgtk4_cb_launch_started(GAppLaunchContext* context, GAppInfo* info, GVaria
   (void)rgtk4_eval_callback(rc, 3, _argv);
   UNPROTECT(3);
 }
-void _rgtk4_cb__g_reserved1() {
+void _rgtk4_cb__g_reserved1(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__g_reserved2() {
+void _rgtk4_cb__g_reserved2(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__g_reserved3() {
+void _rgtk4_cb__g_reserved3(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -1747,11 +1757,11 @@ void _rgtk4_cb_fill_async(GBufferedInputStream* stream, gssize count, int io_pri
   (void)rgtk4_eval_callback(rc, 5, _argv);
   UNPROTECT(5);
 }
-void _rgtk4_cb__g_reserved4() {
+void _rgtk4_cb__g_reserved4(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__g_reserved5() {
+void _rgtk4_cb__g_reserved5(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -2201,11 +2211,11 @@ void _rgtk4_cb_close_async(GOutputStream* stream, int io_priority, GCancellable*
   (void)rgtk4_eval_callback(rc, 4, _argv);
   UNPROTECT(4);
 }
-void _rgtk4_cb__g_reserved6() {
+void _rgtk4_cb__g_reserved6(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__g_reserved7() {
+void _rgtk4_cb__g_reserved7(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -2421,19 +2431,19 @@ void _rgtk4_cb_set_display_name_async(GFile* file, const char* display_name, int
   (void)rgtk4_eval_callback(rc, 5, _argv);
   UNPROTECT(5);
 }
-void _rgtk4_cb__query_settable_attributes_async() {
+void _rgtk4_cb__query_settable_attributes_async(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__query_settable_attributes_finish() {
+void _rgtk4_cb__query_settable_attributes_finish(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__query_writable_namespaces_async() {
+void _rgtk4_cb__query_writable_namespaces_async(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__query_writable_namespaces_finish() {
+void _rgtk4_cb__query_writable_namespaces_finish(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -2786,15 +2796,15 @@ GOutputStream* _rgtk4_cb_get_output_stream(GIOStream* stream) {
   UNPROTECT(2);
   return _result;
 }
-void _rgtk4_cb__g_reserved8() {
+void _rgtk4_cb__g_reserved8(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__g_reserved9() {
+void _rgtk4_cb__g_reserved9(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__g_reserved10() {
+void _rgtk4_cb__g_reserved10(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -3264,7 +3274,7 @@ gboolean _rgtk4_cb_supports_hostname(GProxy* proxy) {
   UNPROTECT(2);
   return _result;
 }
-gboolean _rgtk4_cb_is_supported() {
+gboolean _rgtk4_cb_is_supported(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   gboolean _result = (gboolean)(Rf_asLogical(_r) == TRUE);
@@ -3654,28 +3664,28 @@ gboolean _rgtk4_cb_supports_tls(GTlsBackend* backend) {
   UNPROTECT(2);
   return _result;
 }
-GType _rgtk4_cb_get_certificate_type() {
+GType _rgtk4_cb_get_certificate_type(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GType _result = (GType)(TYPEOF(_r)==EXTPTRSXP ? (size_t)R_ExternalPtrAddr(_r) : REAL(_r)[0]);
   UNPROTECT(1);
   return _result;
 }
-GType _rgtk4_cb_get_client_connection_type() {
+GType _rgtk4_cb_get_client_connection_type(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GType _result = (GType)(TYPEOF(_r)==EXTPTRSXP ? (size_t)R_ExternalPtrAddr(_r) : REAL(_r)[0]);
   UNPROTECT(1);
   return _result;
 }
-GType _rgtk4_cb_get_server_connection_type() {
+GType _rgtk4_cb_get_server_connection_type(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GType _result = (GType)(TYPEOF(_r)==EXTPTRSXP ? (size_t)R_ExternalPtrAddr(_r) : REAL(_r)[0]);
   UNPROTECT(1);
   return _result;
 }
-GType _rgtk4_cb_get_file_database_type() {
+GType _rgtk4_cb_get_file_database_type(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GType _result = (GType)(TYPEOF(_r)==EXTPTRSXP ? (size_t)R_ExternalPtrAddr(_r) : REAL(_r)[0]);
@@ -3700,14 +3710,14 @@ gboolean _rgtk4_cb_supports_dtls(GTlsBackend* backend) {
   UNPROTECT(2);
   return _result;
 }
-GType _rgtk4_cb_get_dtls_client_connection_type() {
+GType _rgtk4_cb_get_dtls_client_connection_type(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GType _result = (GType)(TYPEOF(_r)==EXTPTRSXP ? (size_t)R_ExternalPtrAddr(_r) : REAL(_r)[0]);
   UNPROTECT(1);
   return _result;
 }
-GType _rgtk4_cb_get_dtls_server_connection_type() {
+GType _rgtk4_cb_get_dtls_server_connection_type(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _r = PROTECT(rgtk4_eval_callback(rc, 0, NULL));
   GType _result = (GType)(TYPEOF(_r)==EXTPTRSXP ? (size_t)R_ExternalPtrAddr(_r) : REAL(_r)[0]);
@@ -4483,19 +4493,19 @@ void _rgtk4_cb_value_changed(GtkScaleButton* button, double value) {
   (void)rgtk4_eval_callback(rc, 2, _argv);
   UNPROTECT(2);
 }
-void _rgtk4_cb__gtk_reserved1() {
+void _rgtk4_cb__gtk_reserved1(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_reserved2() {
+void _rgtk4_cb__gtk_reserved2(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_reserved3() {
+void _rgtk4_cb__gtk_reserved3(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_reserved4() {
+void _rgtk4_cb__gtk_reserved4(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -5214,19 +5224,19 @@ guint _rgtk4_cb_get_length(GtkEntryBuffer* buffer) {
   UNPROTECT(2);
   return _result;
 }
-void _rgtk4_cb__gtk_reserved5() {
+void _rgtk4_cb__gtk_reserved5(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_reserved6() {
+void _rgtk4_cb__gtk_reserved6(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_reserved7() {
+void _rgtk4_cb__gtk_reserved7(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_reserved8() {
+void _rgtk4_cb__gtk_reserved8(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -5793,19 +5803,19 @@ gboolean _rgtk4_cb_change_value(GtkRange* range, GtkScrollType scroll, double ne
   UNPROTECT(4);
   return _result;
 }
-void _rgtk4_cb__gtk_recent1() {
+void _rgtk4_cb__gtk_recent1(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_recent2() {
+void _rgtk4_cb__gtk_recent2(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_recent3() {
+void _rgtk4_cb__gtk_recent3(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__gtk_recent4() {
+void _rgtk4_cb__gtk_recent4(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -7048,11 +7058,11 @@ gboolean _rgtk4_cb_is_synthesized(PangoFontFace* face) {
   UNPROTECT(2);
   return _result;
 }
-void _rgtk4_cb__pango_reserved3() {
+void _rgtk4_cb__pango_reserved3(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__pango_reserved4() {
+void _rgtk4_cb__pango_reserved4(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -7093,7 +7103,7 @@ PangoFontFace* _rgtk4_cb_get_face(PangoFontFamily* family, const char* name) {
   UNPROTECT(3);
   return _result;
 }
-void _rgtk4_cb__pango_reserved2() {
+void _rgtk4_cb__pango_reserved2(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -7157,7 +7167,7 @@ PangoLanguage* _rgtk4_cb_get_language(PangoFontset* fontset) {
   UNPROTECT(2);
   return _result;
 }
-void _rgtk4_cb__pango_reserved1() {
+void _rgtk4_cb__pango_reserved1(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -7248,20 +7258,25 @@ void _rgtk4_cb_part_changed(PangoRenderer* renderer, PangoRenderPart part) {
   (void)rgtk4_eval_callback(rc, 2, _argv);
   UNPROTECT(2);
 }
-void _rgtk4_cb_begin(PangoRenderer* renderer) {
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_begin(GtkSourceGutterRenderer* renderer, GtkSourceGutterLines* lines) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)lines, R_NilValue, R_NilValue));
+  SEXP _argv[2] = { _a1, _a2 };
+  (void)rgtk4_eval_callback(rc, 2, _argv);
+  UNPROTECT(2);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_end(GtkSourceGutterRenderer* renderer) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
   SEXP _argv[1] = { _a1 };
   (void)rgtk4_eval_callback(rc, 1, _argv);
   UNPROTECT(1);
 }
-void _rgtk4_cb_end(PangoRenderer* renderer) {
-  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
-  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
-  SEXP _argv[1] = { _a1 };
-  (void)rgtk4_eval_callback(rc, 1, _argv);
-  UNPROTECT(1);
-}
+#endif /* HAVE_GTKSOURCE */
 void _rgtk4_cb_prepare_run(PangoRenderer* renderer, PangoLayoutRun* run) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
@@ -7370,19 +7385,19 @@ void _rgtk4_cb_area_updated(GdkPixbufLoader* loader, int x, int y, int width, in
   (void)rgtk4_eval_callback(rc, 5, _argv);
   UNPROTECT(5);
 }
-void _rgtk4_cb__reserved1() {
+void _rgtk4_cb__reserved1(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__reserved2() {
+void _rgtk4_cb__reserved2(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__reserved3() {
+void _rgtk4_cb__reserved3(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
-void _rgtk4_cb__reserved4() {
+void _rgtk4_cb__reserved4(void) {
   RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
   (void)rgtk4_eval_callback(rc, 0, NULL);
 }
@@ -7470,3 +7485,292 @@ gboolean _rgtk4_cb_PathForeachFunc(GskPathOperation op, const graphene_point_t* 
   UNPROTECT(5);
   return _result;
 }
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_populate_hover_async(GtkSourceAnnotationProvider* self, GtkSourceAnnotation* annotation, GtkSourceHoverDisplay* display, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data) {
+  RCallbackClosure *rc = rgtk4_closure_check(user_data);
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)annotation, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)display, R_NilValue, R_NilValue));
+  SEXP _a4 = PROTECT(R_MakeExternalPtr((void*)cancellable, R_NilValue, R_NilValue));
+  SEXP _a5 = PROTECT(R_MakeExternalPtr((void*)callback, R_NilValue, R_NilValue));
+  SEXP _argv[5] = { _a1, _a2, _a3, _a4, _a5 };
+  (void)rgtk4_eval_callback(rc, 5, _argv);
+  UNPROTECT(5);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_bracket_matched(GtkSourceBuffer* buffer, GtkTextIter* iter, GtkSourceBracketMatchType state) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)buffer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)iter, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(Rf_ScalarInteger((int)(size_t)(state)));
+  SEXP _argv[3] = { _a1, _a2, _a3 };
+  (void)rgtk4_eval_callback(rc, 3, _argv);
+  UNPROTECT(3);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+char* _rgtk4_cb_get_typed_text(GtkSourceCompletionProposal* proposal) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)proposal, R_NilValue, R_NilValue));
+  SEXP _argv[1] = { _a1 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 1, _argv));
+  char* _result = (char*)((_r == R_NilValue || TYPEOF(_r) != STRSXP || Rf_length(_r) == 0 || STRING_ELT(_r, 0) == NA_STRING) ? NULL : g_strdup(CHAR(STRING_ELT(_r, 0))));
+  UNPROTECT(2);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+char* _rgtk4_cb_get_title(GtkSourceCompletionProvider* self) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _argv[1] = { _a1 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 1, _argv));
+  char* _result = (char*)((_r == R_NilValue || TYPEOF(_r) != STRSXP || Rf_length(_r) == 0 || STRING_ELT(_r, 0) == NA_STRING) ? NULL : g_strdup(CHAR(STRING_ELT(_r, 0))));
+  UNPROTECT(2);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+int _rgtk4_cb_get_priority(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)context, R_NilValue, R_NilValue));
+  SEXP _argv[2] = { _a1, _a2 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 2, _argv));
+  int _result = (int)Rf_asInteger(_r);
+  UNPROTECT(3);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+gboolean _rgtk4_cb_is_trigger(GtkSourceIndenter* self, GtkSourceView* view, const GtkTextIter* location, GdkModifierType state, guint keyval) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)view, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)location, R_NilValue, R_NilValue));
+  SEXP _a4 = PROTECT(Rf_ScalarInteger((int)(size_t)(state)));
+  SEXP _a5 = PROTECT(Rf_ScalarInteger((int)(size_t)(keyval)));
+  SEXP _argv[5] = { _a1, _a2, _a3, _a4, _a5 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 5, _argv));
+  gboolean _result = (gboolean)(Rf_asLogical(_r) == TRUE);
+  UNPROTECT(6);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+gboolean _rgtk4_cb_key_activates(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GtkSourceCompletionProposal* proposal, guint keyval, GdkModifierType state) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)context, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)proposal, R_NilValue, R_NilValue));
+  SEXP _a4 = PROTECT(Rf_ScalarInteger((int)(size_t)(keyval)));
+  SEXP _a5 = PROTECT(Rf_ScalarInteger((int)(size_t)(state)));
+  SEXP _argv[5] = { _a1, _a2, _a3, _a4, _a5 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 5, _argv));
+  gboolean _result = (gboolean)(Rf_asLogical(_r) == TRUE);
+  UNPROTECT(6);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_populate_async(GtkSourceHoverProvider* self, GtkSourceHoverContext* context, GtkSourceHoverDisplay* display, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data) {
+  RCallbackClosure *rc = rgtk4_closure_check(user_data);
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)context, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)display, R_NilValue, R_NilValue));
+  SEXP _a4 = PROTECT(R_MakeExternalPtr((void*)cancellable, R_NilValue, R_NilValue));
+  SEXP _a5 = PROTECT(R_MakeExternalPtr((void*)callback, R_NilValue, R_NilValue));
+  SEXP _argv[5] = { _a1, _a2, _a3, _a4, _a5 };
+  (void)rgtk4_eval_callback(rc, 5, _argv);
+  UNPROTECT(5);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_refilter(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GListModel* model) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)context, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)model, R_NilValue, R_NilValue));
+  SEXP _argv[3] = { _a1, _a2, _a3 };
+  (void)rgtk4_eval_callback(rc, 3, _argv);
+  UNPROTECT(3);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_display(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GtkSourceCompletionProposal* proposal, GtkSourceCompletionCell* cell) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)context, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)proposal, R_NilValue, R_NilValue));
+  SEXP _a4 = PROTECT(R_MakeExternalPtr((void*)cell, R_NilValue, R_NilValue));
+  SEXP _argv[4] = { _a1, _a2, _a3, _a4 };
+  (void)rgtk4_eval_callback(rc, 4, _argv);
+  UNPROTECT(4);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+GPtrArray* _rgtk4_cb_list_alternates(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GtkSourceCompletionProposal* proposal) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)context, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)proposal, R_NilValue, R_NilValue));
+  SEXP _argv[3] = { _a1, _a2, _a3 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 3, _argv));
+  GPtrArray* _result = (GPtrArray*)(_r == R_NilValue ? NULL : R_ExternalPtrAddr(_r));
+  UNPROTECT(4);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_query_data(GtkSourceGutterRenderer* renderer, GtkSourceGutterLines* lines, guint line) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)lines, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(Rf_ScalarInteger((int)(size_t)(line)));
+  SEXP _argv[3] = { _a1, _a2, _a3 };
+  (void)rgtk4_eval_callback(rc, 3, _argv);
+  UNPROTECT(3);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_snapshot_line(GtkSourceGutterRenderer* renderer, GtkSnapshot* snapshot, GtkSourceGutterLines* lines, guint line) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)snapshot, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)lines, R_NilValue, R_NilValue));
+  SEXP _a4 = PROTECT(Rf_ScalarInteger((int)(size_t)(line)));
+  SEXP _argv[4] = { _a1, _a2, _a3, _a4 };
+  (void)rgtk4_eval_callback(rc, 4, _argv);
+  UNPROTECT(4);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_change_view(GtkSourceGutterRenderer* renderer, GtkSourceView* old_view) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)old_view, R_NilValue, R_NilValue));
+  SEXP _argv[2] = { _a1, _a2 };
+  (void)rgtk4_eval_callback(rc, 2, _argv);
+  UNPROTECT(2);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_change_buffer(GtkSourceGutterRenderer* renderer, GtkSourceBuffer* old_buffer) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)old_buffer, R_NilValue, R_NilValue));
+  SEXP _argv[2] = { _a1, _a2 };
+  (void)rgtk4_eval_callback(rc, 2, _argv);
+  UNPROTECT(2);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+gboolean _rgtk4_cb_query_activatable(GtkSourceGutterRenderer* renderer, GtkTextIter* iter, GdkRectangle* area) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)renderer, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)iter, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)area, R_NilValue, R_NilValue));
+  SEXP _argv[3] = { _a1, _a2, _a3 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 3, _argv));
+  gboolean _result = (gboolean)(Rf_asLogical(_r) == TRUE);
+  UNPROTECT(4);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_indent(GtkSourceIndenter* self, GtkSourceView* view, GtkTextIter* iter) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)self, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)view, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)iter, R_NilValue, R_NilValue));
+  SEXP _argv[3] = { _a1, _a2, _a3 };
+  (void)rgtk4_eval_callback(rc, 3, _argv);
+  UNPROTECT(3);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+gboolean _rgtk4_cb_SchedulerCallback(gint64 deadline, gpointer user_data) {
+  RCallbackClosure *rc = rgtk4_closure_check(user_data);
+  SEXP _a1 = PROTECT(Rf_ScalarReal((double)(size_t)(deadline)));
+  SEXP _argv[1] = { _a1 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 1, _argv));
+  gboolean _result = (gboolean)(Rf_asLogical(_r) == TRUE);
+  UNPROTECT(2);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+GtkSourceStyleScheme* _rgtk4_cb_get_style_scheme(GtkSourceStyleSchemeChooser* chooser) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)chooser, R_NilValue, R_NilValue));
+  SEXP _argv[1] = { _a1 };
+  SEXP _r = PROTECT(rgtk4_eval_callback(rc, 1, _argv));
+  GtkSourceStyleScheme* _result = (GtkSourceStyleScheme*)(_r == R_NilValue ? NULL : R_ExternalPtrAddr(_r));
+  UNPROTECT(2);
+  return _result;
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_set_style_scheme(GtkSourceStyleSchemeChooser* chooser, GtkSourceStyleScheme* scheme) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)chooser, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)scheme, R_NilValue, R_NilValue));
+  SEXP _argv[2] = { _a1, _a2 };
+  (void)rgtk4_eval_callback(rc, 2, _argv);
+  UNPROTECT(2);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_line_mark_activated(GtkSourceView* view, const GtkTextIter* iter, guint button, GdkModifierType state, gint n_presses) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)view, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)iter, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(Rf_ScalarInteger((int)(size_t)(button)));
+  SEXP _a4 = PROTECT(Rf_ScalarInteger((int)(size_t)(state)));
+  SEXP _a5 = PROTECT(Rf_ScalarInteger((int)(size_t)(n_presses)));
+  SEXP _argv[5] = { _a1, _a2, _a3, _a4, _a5 };
+  (void)rgtk4_eval_callback(rc, 5, _argv);
+  UNPROTECT(5);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_show_completion(GtkSourceView* view) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)view, R_NilValue, R_NilValue));
+  SEXP _argv[1] = { _a1 };
+  (void)rgtk4_eval_callback(rc, 1, _argv);
+  UNPROTECT(1);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_move_lines(GtkSourceView* view, gboolean down) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)view, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(Rf_ScalarLogical((int)(size_t)(down)));
+  SEXP _argv[2] = { _a1, _a2 };
+  (void)rgtk4_eval_callback(rc, 2, _argv);
+  UNPROTECT(2);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_move_words(GtkSourceView* view, gint step) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)view, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(Rf_ScalarInteger((int)(size_t)(step)));
+  SEXP _argv[2] = { _a1, _a2 };
+  (void)rgtk4_eval_callback(rc, 2, _argv);
+  UNPROTECT(2);
+}
+#endif /* HAVE_GTKSOURCE */
+#ifdef HAVE_GTKSOURCE
+void _rgtk4_cb_push_snippet(GtkSourceView* view, GtkSourceSnippet* snippet, GtkTextIter* location) {
+  RCallbackClosure *rc = rgtk4_closure_check(rgtk4_current_closure());
+  SEXP _a1 = PROTECT(R_MakeExternalPtr((void*)view, R_NilValue, R_NilValue));
+  SEXP _a2 = PROTECT(R_MakeExternalPtr((void*)snippet, R_NilValue, R_NilValue));
+  SEXP _a3 = PROTECT(R_MakeExternalPtr((void*)location, R_NilValue, R_NilValue));
+  SEXP _argv[3] = { _a1, _a2, _a3 };
+  (void)rgtk4_eval_callback(rc, 3, _argv);
+  UNPROTECT(3);
+}
+#endif /* HAVE_GTKSOURCE */

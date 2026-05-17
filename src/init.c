@@ -7261,6 +7261,1314 @@ extern SEXP R_gtk_value_dup_expression(SEXP s1);
 extern SEXP R_gtk_value_get_expression(SEXP s1);
 extern SEXP R_gtk_value_set_expression(SEXP s1, SEXP s2);
 extern SEXP R_gtk_value_take_expression(SEXP s1, SEXP s2);
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_annotation_new(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_annotation_get_description(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_annotation_get_icon(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_annotation_get_line(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_annotation_get_style(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_annotations_add_provider(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_annotations_remove_provider(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_new(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_new_with_language(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_backward_iter_to_source_mark(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_change_case(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_create_source_mark(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_ensure_highlight(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_forward_iter_to_source_mark(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_context_classes_at_iter(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_highlight_matching_brackets(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_highlight_syntax(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_implicit_trailing_newline(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_language(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_loading(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_source_marks_at_iter(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_source_marks_at_line(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_get_style_scheme(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_iter_backward_to_context_class_toggle(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_iter_forward_to_context_class_toggle(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_iter_has_context_class(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_join_lines(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_remove_source_marks(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_set_highlight_matching_brackets(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_set_highlight_syntax(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_set_implicit_trailing_newline(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_set_language(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_set_style_scheme(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_buffer_sort_lines(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_fuzzy_highlight(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_fuzzy_match(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_add_provider(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_block_interactive(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_get_page_size(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_get_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_hide(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_remove_provider(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_set_page_size(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_show(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_unblock_interactive(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_get_column(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_get_widget(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_set_gicon(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_set_icon_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_set_markup(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_set_paintable(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_set_text(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_set_text_with_attributes(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_cell_set_widget(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_activation(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_bounds(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_busy(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_completion(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_empty(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_language(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_get_word(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_context_set_proposals_for_provider(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_activate(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_display(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_get_priority(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_get_title(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_is_trigger(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_key_activates(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_list_alternates(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_populate_async(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_populate_finish(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_provider_refilter(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_snippets_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_words_new(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_words_register(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_completion_words_unregister(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_copy(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_free(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_get_charset(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_get_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_to_string(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_get_all(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_get_current(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_get_default_candidates(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_get_from_charset(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_encoding_get_utf8(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_check_file_on_disk(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_get_compression_type(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_get_encoding(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_get_location(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_get_newline_type(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_is_deleted(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_is_externally_modified(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_is_local(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_is_readonly(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_set_location(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_new(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_new_from_stream(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_get_compression_type(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_get_encoding(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_get_file(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_get_input_stream(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_get_location(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_get_newline_type(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_load_async(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_load_finish(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_set_candidate_encodings(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_loader_error_quark(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_new(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_new_with_target(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_get_compression_type(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_get_encoding(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_get_file(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_get_flags(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_get_location(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_get_newline_type(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_save_async(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_save_finish(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_set_compression_type(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_set_encoding(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_set_flags(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_set_newline_type(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_file_saver_error_quark(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_get_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_insert(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_remove(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_reorder(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_add_class(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_add_qclass(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_get_first(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_get_iter_at_line(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_get_last(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_get_line_yrange(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_get_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_has_class(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_has_qclass(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_is_cursor(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_is_prelit(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_is_selected(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_remove_class(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_lines_remove_qclass(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_activate(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5, SEXP s6);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_align_cell(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_get_alignment_mode(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_get_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_get_xalign(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_get_xpad(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_get_yalign(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_get_ypad(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_query_activatable(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_set_alignment_mode(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_set_xalign(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_set_xpad(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_set_yalign(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_set_ypad(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_get_gicon(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_get_icon_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_get_paintable(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_get_pixbuf(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_overlay_paintable(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_set_gicon(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_set_icon_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_set_paintable(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_pixbuf_set_pixbuf(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_text_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_text_measure(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_text_measure_markup(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_text_set_markup(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_gutter_renderer_text_set_text(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_add_provider(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_remove_provider(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_context_get_bounds(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_context_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_context_get_iter(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_context_get_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_display_append(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_display_insert_after(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_display_prepend(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_display_remove(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_provider_populate_async(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_hover_provider_populate_finish(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_indenter_indent(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_indenter_is_trigger(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_globs(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_hidden(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_id(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_metadata(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_mime_types(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_section(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_style_fallback(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_style_ids(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_get_style_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_manager_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_manager_get_default(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_manager_get_language(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_manager_get_language_ids(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_manager_get_search_path(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_manager_guess_language(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_language_manager_set_search_path(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_map_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_map_get_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_map_set_view(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_new(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_get_category(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_next(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_prev(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_get_background(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_get_gicon(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_get_icon_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_get_pixbuf(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_get_tooltip_markup(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_get_tooltip_text(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_render_icon(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_set_background(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_set_gicon(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_set_icon_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_mark_attributes_set_pixbuf(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_new(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_new_from_view(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_draw_page(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_body_font_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_bottom_margin(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_footer_font_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_header_font_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_highlight_syntax(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_left_margin(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_line_numbers_font_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_n_pages(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_pagination_progress(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_print_footer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_print_header(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_print_line_numbers(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_right_margin(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_tab_width(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_top_margin(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_get_wrap_mode(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_paginate(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_body_font_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_bottom_margin(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_footer_font_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_footer_format(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_header_font_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_header_format(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_highlight_syntax(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_left_margin(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_line_numbers_font_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_print_footer(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_print_header(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_print_line_numbers(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_right_margin(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_tab_width(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_top_margin(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_print_compositor_set_wrap_mode(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_new(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_add_region(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_add_subregion(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_get_bounds(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_get_start_region_iter(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_intersect_region(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_intersect_subregion(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_is_empty(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_subtract_region(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_subtract_subregion(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_to_string(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_iter_get_subregion(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_iter_is_end(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_region_iter_next(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_new(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_backward(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_backward_async(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_backward_finish(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_forward(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_forward_async(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_forward_finish(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_get_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_get_highlight(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_get_match_style(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_get_occurrence_position(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_get_occurrences_count(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_get_regex_error(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_get_settings(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_replace(SEXP s1, SEXP s2, SEXP s3, SEXP s4, SEXP s5);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_replace_all(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_set_highlight(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_context_set_match_style(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_get_at_word_boundaries(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_get_case_sensitive(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_get_regex_enabled(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_get_search_text(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_get_wrap_around(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_set_at_word_boundaries(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_set_case_sensitive(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_set_regex_enabled(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_set_search_text(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_search_settings_set_wrap_around(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_new(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_add_chunk(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_copy(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_context(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_description(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_focus_position(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_language_id(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_n_chunks(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_nth_chunk(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_get_trigger(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_set_description(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_set_language_id(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_set_name(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_set_trigger(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_copy(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_get_context(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_get_focus_position(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_get_spec(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_get_text(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_get_text_set(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_get_tooltip_text(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_set_context(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_set_focus_position(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_set_spec(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_set_text(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_set_text_set(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_chunk_set_tooltip_text(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_clear_variables(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_expand(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_get_variable(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_set_constant(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_set_line_prefix(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_set_tab_width(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_set_use_spaces(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_context_set_variable(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_manager_get_default(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_manager_get_search_path(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_manager_get_snippet(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_manager_list_groups(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_manager_list_matching(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_snippet_manager_set_search_path(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_bind_matrix_setting(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_get_enable_matrix(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_get_matrix(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_get_types_for_locations(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_set_enable_matrix(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_set_matrix(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_space_drawer_set_types_for_locations(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_apply(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_copy(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_get_authors(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_get_description(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_get_filename(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_get_id(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_get_name(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_get_style(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_chooser_get_style_scheme(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_chooser_set_style_scheme(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_chooser_button_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_chooser_widget_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_get_default(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_append_search_path(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_force_rescan(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_get_scheme(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_get_scheme_ids(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_get_search_path(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_prepend_search_path(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_manager_set_search_path(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_preview_get_selected(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_style_scheme_preview_set_selected(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_tag_new(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_new_with_buffer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_auto_indent(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_background_pattern(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_completion(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_enable_snippets(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_gutter(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_highlight_current_line(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_hover(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_indent_on_tab(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_indent_width(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_indenter(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_insert_spaces_instead_of_tabs(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_mark_attributes(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_right_margin_position(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_show_line_marks(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_show_line_numbers(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_show_right_margin(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_smart_backspace(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_smart_home_end(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_space_drawer(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_tab_width(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_get_visual_column(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_indent_lines(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_push_snippet(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_auto_indent(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_background_pattern(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_enable_snippets(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_highlight_current_line(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_indent_on_tab(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_indent_width(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_indenter(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_insert_spaces_instead_of_tabs(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_mark_attributes(SEXP s1, SEXP s2, SEXP s3, SEXP s4);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_right_margin_position(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_show_line_marks(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_show_line_numbers(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_show_right_margin(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_smart_backspace(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_smart_home_end(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_set_tab_width(SEXP s1, SEXP s2);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_view_unindent_lines(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_vim_im_context_new(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_check_version(SEXP s1, SEXP s2, SEXP s3);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_finalize(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_get_major_version(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_get_micro_version(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_get_minor_version(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_init(void);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_utils_escape_search_text(SEXP s1);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern SEXP R_gtk_source_utils_unescape_search_text(SEXP s1);
+#endif
 extern SEXP R_pango_attr_font_desc_new(SEXP s1);
 extern SEXP R_pango_attr_font_features_new(SEXP s1);
 extern SEXP R_pango_attr_iterator_copy(SEXP s1);
@@ -7702,6 +9010,7 @@ extern SEXP R_gtk_window_track(SEXP s_window);
 extern SEXP R_gtk_main_iteration(void);
 extern SEXP R_gtk_main_iteration_do(SEXP s_blocking);
 extern SEXP R_macos_set_app_icon(SEXP s_path);
+extern SEXP R_have_gtksource(void);
 extern SEXP R_extptr_address(SEXP s);
 extern SEXP R_gtk_window_add_close_shortcut(SEXP s_window);
 extern SEXP R_gtk_get_ui_state(SEXP s_widgets);
@@ -14978,6 +16287,1314 @@ static const R_CallMethodDef CallEntries[] = {
     {"R_gtk_value_get_expression", (DL_FUNC) &R_gtk_value_get_expression, 1},
     {"R_gtk_value_set_expression", (DL_FUNC) &R_gtk_value_set_expression, 2},
     {"R_gtk_value_take_expression", (DL_FUNC) &R_gtk_value_take_expression, 2},
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_annotation_new", (DL_FUNC) &R_gtk_source_annotation_new, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_annotation_get_description", (DL_FUNC) &R_gtk_source_annotation_get_description, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_annotation_get_icon", (DL_FUNC) &R_gtk_source_annotation_get_icon, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_annotation_get_line", (DL_FUNC) &R_gtk_source_annotation_get_line, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_annotation_get_style", (DL_FUNC) &R_gtk_source_annotation_get_style, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_annotations_add_provider", (DL_FUNC) &R_gtk_source_annotations_add_provider, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_annotations_remove_provider", (DL_FUNC) &R_gtk_source_annotations_remove_provider, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_new", (DL_FUNC) &R_gtk_source_buffer_new, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_new_with_language", (DL_FUNC) &R_gtk_source_buffer_new_with_language, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_backward_iter_to_source_mark", (DL_FUNC) &R_gtk_source_buffer_backward_iter_to_source_mark, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_change_case", (DL_FUNC) &R_gtk_source_buffer_change_case, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_create_source_mark", (DL_FUNC) &R_gtk_source_buffer_create_source_mark, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_ensure_highlight", (DL_FUNC) &R_gtk_source_buffer_ensure_highlight, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_forward_iter_to_source_mark", (DL_FUNC) &R_gtk_source_buffer_forward_iter_to_source_mark, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_context_classes_at_iter", (DL_FUNC) &R_gtk_source_buffer_get_context_classes_at_iter, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_highlight_matching_brackets", (DL_FUNC) &R_gtk_source_buffer_get_highlight_matching_brackets, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_highlight_syntax", (DL_FUNC) &R_gtk_source_buffer_get_highlight_syntax, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_implicit_trailing_newline", (DL_FUNC) &R_gtk_source_buffer_get_implicit_trailing_newline, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_language", (DL_FUNC) &R_gtk_source_buffer_get_language, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_loading", (DL_FUNC) &R_gtk_source_buffer_get_loading, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_source_marks_at_iter", (DL_FUNC) &R_gtk_source_buffer_get_source_marks_at_iter, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_source_marks_at_line", (DL_FUNC) &R_gtk_source_buffer_get_source_marks_at_line, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_get_style_scheme", (DL_FUNC) &R_gtk_source_buffer_get_style_scheme, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_iter_backward_to_context_class_toggle", (DL_FUNC) &R_gtk_source_buffer_iter_backward_to_context_class_toggle, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_iter_forward_to_context_class_toggle", (DL_FUNC) &R_gtk_source_buffer_iter_forward_to_context_class_toggle, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_iter_has_context_class", (DL_FUNC) &R_gtk_source_buffer_iter_has_context_class, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_join_lines", (DL_FUNC) &R_gtk_source_buffer_join_lines, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_remove_source_marks", (DL_FUNC) &R_gtk_source_buffer_remove_source_marks, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_set_highlight_matching_brackets", (DL_FUNC) &R_gtk_source_buffer_set_highlight_matching_brackets, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_set_highlight_syntax", (DL_FUNC) &R_gtk_source_buffer_set_highlight_syntax, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_set_implicit_trailing_newline", (DL_FUNC) &R_gtk_source_buffer_set_implicit_trailing_newline, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_set_language", (DL_FUNC) &R_gtk_source_buffer_set_language, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_set_style_scheme", (DL_FUNC) &R_gtk_source_buffer_set_style_scheme, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_buffer_sort_lines", (DL_FUNC) &R_gtk_source_buffer_sort_lines, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_fuzzy_highlight", (DL_FUNC) &R_gtk_source_completion_fuzzy_highlight, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_fuzzy_match", (DL_FUNC) &R_gtk_source_completion_fuzzy_match, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_add_provider", (DL_FUNC) &R_gtk_source_completion_add_provider, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_block_interactive", (DL_FUNC) &R_gtk_source_completion_block_interactive, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_get_buffer", (DL_FUNC) &R_gtk_source_completion_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_get_page_size", (DL_FUNC) &R_gtk_source_completion_get_page_size, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_get_view", (DL_FUNC) &R_gtk_source_completion_get_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_hide", (DL_FUNC) &R_gtk_source_completion_hide, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_remove_provider", (DL_FUNC) &R_gtk_source_completion_remove_provider, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_set_page_size", (DL_FUNC) &R_gtk_source_completion_set_page_size, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_show", (DL_FUNC) &R_gtk_source_completion_show, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_unblock_interactive", (DL_FUNC) &R_gtk_source_completion_unblock_interactive, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_get_column", (DL_FUNC) &R_gtk_source_completion_cell_get_column, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_get_widget", (DL_FUNC) &R_gtk_source_completion_cell_get_widget, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_set_gicon", (DL_FUNC) &R_gtk_source_completion_cell_set_gicon, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_set_icon_name", (DL_FUNC) &R_gtk_source_completion_cell_set_icon_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_set_markup", (DL_FUNC) &R_gtk_source_completion_cell_set_markup, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_set_paintable", (DL_FUNC) &R_gtk_source_completion_cell_set_paintable, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_set_text", (DL_FUNC) &R_gtk_source_completion_cell_set_text, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_set_text_with_attributes", (DL_FUNC) &R_gtk_source_completion_cell_set_text_with_attributes, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_cell_set_widget", (DL_FUNC) &R_gtk_source_completion_cell_set_widget, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_activation", (DL_FUNC) &R_gtk_source_completion_context_get_activation, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_bounds", (DL_FUNC) &R_gtk_source_completion_context_get_bounds, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_buffer", (DL_FUNC) &R_gtk_source_completion_context_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_busy", (DL_FUNC) &R_gtk_source_completion_context_get_busy, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_completion", (DL_FUNC) &R_gtk_source_completion_context_get_completion, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_empty", (DL_FUNC) &R_gtk_source_completion_context_get_empty, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_language", (DL_FUNC) &R_gtk_source_completion_context_get_language, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_view", (DL_FUNC) &R_gtk_source_completion_context_get_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_get_word", (DL_FUNC) &R_gtk_source_completion_context_get_word, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_context_set_proposals_for_provider", (DL_FUNC) &R_gtk_source_completion_context_set_proposals_for_provider, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_activate", (DL_FUNC) &R_gtk_source_completion_provider_activate, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_display", (DL_FUNC) &R_gtk_source_completion_provider_display, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_get_priority", (DL_FUNC) &R_gtk_source_completion_provider_get_priority, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_get_title", (DL_FUNC) &R_gtk_source_completion_provider_get_title, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_is_trigger", (DL_FUNC) &R_gtk_source_completion_provider_is_trigger, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_key_activates", (DL_FUNC) &R_gtk_source_completion_provider_key_activates, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_list_alternates", (DL_FUNC) &R_gtk_source_completion_provider_list_alternates, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_populate_async", (DL_FUNC) &R_gtk_source_completion_provider_populate_async, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_populate_finish", (DL_FUNC) &R_gtk_source_completion_provider_populate_finish, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_provider_refilter", (DL_FUNC) &R_gtk_source_completion_provider_refilter, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_snippets_new", (DL_FUNC) &R_gtk_source_completion_snippets_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_words_new", (DL_FUNC) &R_gtk_source_completion_words_new, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_words_register", (DL_FUNC) &R_gtk_source_completion_words_register, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_completion_words_unregister", (DL_FUNC) &R_gtk_source_completion_words_unregister, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_copy", (DL_FUNC) &R_gtk_source_encoding_copy, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_free", (DL_FUNC) &R_gtk_source_encoding_free, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_get_charset", (DL_FUNC) &R_gtk_source_encoding_get_charset, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_get_name", (DL_FUNC) &R_gtk_source_encoding_get_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_to_string", (DL_FUNC) &R_gtk_source_encoding_to_string, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_get_all", (DL_FUNC) &R_gtk_source_encoding_get_all, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_get_current", (DL_FUNC) &R_gtk_source_encoding_get_current, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_get_default_candidates", (DL_FUNC) &R_gtk_source_encoding_get_default_candidates, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_get_from_charset", (DL_FUNC) &R_gtk_source_encoding_get_from_charset, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_encoding_get_utf8", (DL_FUNC) &R_gtk_source_encoding_get_utf8, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_new", (DL_FUNC) &R_gtk_source_file_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_check_file_on_disk", (DL_FUNC) &R_gtk_source_file_check_file_on_disk, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_get_compression_type", (DL_FUNC) &R_gtk_source_file_get_compression_type, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_get_encoding", (DL_FUNC) &R_gtk_source_file_get_encoding, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_get_location", (DL_FUNC) &R_gtk_source_file_get_location, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_get_newline_type", (DL_FUNC) &R_gtk_source_file_get_newline_type, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_is_deleted", (DL_FUNC) &R_gtk_source_file_is_deleted, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_is_externally_modified", (DL_FUNC) &R_gtk_source_file_is_externally_modified, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_is_local", (DL_FUNC) &R_gtk_source_file_is_local, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_is_readonly", (DL_FUNC) &R_gtk_source_file_is_readonly, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_set_location", (DL_FUNC) &R_gtk_source_file_set_location, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_new", (DL_FUNC) &R_gtk_source_file_loader_new, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_new_from_stream", (DL_FUNC) &R_gtk_source_file_loader_new_from_stream, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_get_buffer", (DL_FUNC) &R_gtk_source_file_loader_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_get_compression_type", (DL_FUNC) &R_gtk_source_file_loader_get_compression_type, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_get_encoding", (DL_FUNC) &R_gtk_source_file_loader_get_encoding, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_get_file", (DL_FUNC) &R_gtk_source_file_loader_get_file, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_get_input_stream", (DL_FUNC) &R_gtk_source_file_loader_get_input_stream, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_get_location", (DL_FUNC) &R_gtk_source_file_loader_get_location, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_get_newline_type", (DL_FUNC) &R_gtk_source_file_loader_get_newline_type, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_load_async", (DL_FUNC) &R_gtk_source_file_loader_load_async, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_load_finish", (DL_FUNC) &R_gtk_source_file_loader_load_finish, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_set_candidate_encodings", (DL_FUNC) &R_gtk_source_file_loader_set_candidate_encodings, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_loader_error_quark", (DL_FUNC) &R_gtk_source_file_loader_error_quark, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_new", (DL_FUNC) &R_gtk_source_file_saver_new, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_new_with_target", (DL_FUNC) &R_gtk_source_file_saver_new_with_target, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_get_buffer", (DL_FUNC) &R_gtk_source_file_saver_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_get_compression_type", (DL_FUNC) &R_gtk_source_file_saver_get_compression_type, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_get_encoding", (DL_FUNC) &R_gtk_source_file_saver_get_encoding, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_get_file", (DL_FUNC) &R_gtk_source_file_saver_get_file, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_get_flags", (DL_FUNC) &R_gtk_source_file_saver_get_flags, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_get_location", (DL_FUNC) &R_gtk_source_file_saver_get_location, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_get_newline_type", (DL_FUNC) &R_gtk_source_file_saver_get_newline_type, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_save_async", (DL_FUNC) &R_gtk_source_file_saver_save_async, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_save_finish", (DL_FUNC) &R_gtk_source_file_saver_save_finish, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_set_compression_type", (DL_FUNC) &R_gtk_source_file_saver_set_compression_type, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_set_encoding", (DL_FUNC) &R_gtk_source_file_saver_set_encoding, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_set_flags", (DL_FUNC) &R_gtk_source_file_saver_set_flags, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_set_newline_type", (DL_FUNC) &R_gtk_source_file_saver_set_newline_type, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_file_saver_error_quark", (DL_FUNC) &R_gtk_source_file_saver_error_quark, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_get_view", (DL_FUNC) &R_gtk_source_gutter_get_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_insert", (DL_FUNC) &R_gtk_source_gutter_insert, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_remove", (DL_FUNC) &R_gtk_source_gutter_remove, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_reorder", (DL_FUNC) &R_gtk_source_gutter_reorder, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_add_class", (DL_FUNC) &R_gtk_source_gutter_lines_add_class, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_add_qclass", (DL_FUNC) &R_gtk_source_gutter_lines_add_qclass, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_get_buffer", (DL_FUNC) &R_gtk_source_gutter_lines_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_get_first", (DL_FUNC) &R_gtk_source_gutter_lines_get_first, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_get_iter_at_line", (DL_FUNC) &R_gtk_source_gutter_lines_get_iter_at_line, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_get_last", (DL_FUNC) &R_gtk_source_gutter_lines_get_last, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_get_line_yrange", (DL_FUNC) &R_gtk_source_gutter_lines_get_line_yrange, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_get_view", (DL_FUNC) &R_gtk_source_gutter_lines_get_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_has_class", (DL_FUNC) &R_gtk_source_gutter_lines_has_class, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_has_qclass", (DL_FUNC) &R_gtk_source_gutter_lines_has_qclass, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_is_cursor", (DL_FUNC) &R_gtk_source_gutter_lines_is_cursor, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_is_prelit", (DL_FUNC) &R_gtk_source_gutter_lines_is_prelit, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_is_selected", (DL_FUNC) &R_gtk_source_gutter_lines_is_selected, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_remove_class", (DL_FUNC) &R_gtk_source_gutter_lines_remove_class, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_lines_remove_qclass", (DL_FUNC) &R_gtk_source_gutter_lines_remove_qclass, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_activate", (DL_FUNC) &R_gtk_source_gutter_renderer_activate, 6},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_align_cell", (DL_FUNC) &R_gtk_source_gutter_renderer_align_cell, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_get_alignment_mode", (DL_FUNC) &R_gtk_source_gutter_renderer_get_alignment_mode, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_get_buffer", (DL_FUNC) &R_gtk_source_gutter_renderer_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_get_view", (DL_FUNC) &R_gtk_source_gutter_renderer_get_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_get_xalign", (DL_FUNC) &R_gtk_source_gutter_renderer_get_xalign, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_get_xpad", (DL_FUNC) &R_gtk_source_gutter_renderer_get_xpad, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_get_yalign", (DL_FUNC) &R_gtk_source_gutter_renderer_get_yalign, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_get_ypad", (DL_FUNC) &R_gtk_source_gutter_renderer_get_ypad, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_query_activatable", (DL_FUNC) &R_gtk_source_gutter_renderer_query_activatable, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_set_alignment_mode", (DL_FUNC) &R_gtk_source_gutter_renderer_set_alignment_mode, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_set_xalign", (DL_FUNC) &R_gtk_source_gutter_renderer_set_xalign, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_set_xpad", (DL_FUNC) &R_gtk_source_gutter_renderer_set_xpad, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_set_yalign", (DL_FUNC) &R_gtk_source_gutter_renderer_set_yalign, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_set_ypad", (DL_FUNC) &R_gtk_source_gutter_renderer_set_ypad, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_new", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_get_gicon", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_get_gicon, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_get_icon_name", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_get_icon_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_get_paintable", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_get_paintable, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_get_pixbuf", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_get_pixbuf, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_overlay_paintable", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_overlay_paintable, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_set_gicon", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_set_gicon, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_set_icon_name", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_set_icon_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_set_paintable", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_set_paintable, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_pixbuf_set_pixbuf", (DL_FUNC) &R_gtk_source_gutter_renderer_pixbuf_set_pixbuf, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_text_new", (DL_FUNC) &R_gtk_source_gutter_renderer_text_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_text_measure", (DL_FUNC) &R_gtk_source_gutter_renderer_text_measure, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_text_measure_markup", (DL_FUNC) &R_gtk_source_gutter_renderer_text_measure_markup, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_text_set_markup", (DL_FUNC) &R_gtk_source_gutter_renderer_text_set_markup, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_gutter_renderer_text_set_text", (DL_FUNC) &R_gtk_source_gutter_renderer_text_set_text, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_add_provider", (DL_FUNC) &R_gtk_source_hover_add_provider, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_remove_provider", (DL_FUNC) &R_gtk_source_hover_remove_provider, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_context_get_bounds", (DL_FUNC) &R_gtk_source_hover_context_get_bounds, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_context_get_buffer", (DL_FUNC) &R_gtk_source_hover_context_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_context_get_iter", (DL_FUNC) &R_gtk_source_hover_context_get_iter, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_context_get_view", (DL_FUNC) &R_gtk_source_hover_context_get_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_display_append", (DL_FUNC) &R_gtk_source_hover_display_append, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_display_insert_after", (DL_FUNC) &R_gtk_source_hover_display_insert_after, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_display_prepend", (DL_FUNC) &R_gtk_source_hover_display_prepend, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_display_remove", (DL_FUNC) &R_gtk_source_hover_display_remove, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_provider_populate_async", (DL_FUNC) &R_gtk_source_hover_provider_populate_async, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_hover_provider_populate_finish", (DL_FUNC) &R_gtk_source_hover_provider_populate_finish, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_indenter_indent", (DL_FUNC) &R_gtk_source_indenter_indent, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_indenter_is_trigger", (DL_FUNC) &R_gtk_source_indenter_is_trigger, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_globs", (DL_FUNC) &R_gtk_source_language_get_globs, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_hidden", (DL_FUNC) &R_gtk_source_language_get_hidden, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_id", (DL_FUNC) &R_gtk_source_language_get_id, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_metadata", (DL_FUNC) &R_gtk_source_language_get_metadata, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_mime_types", (DL_FUNC) &R_gtk_source_language_get_mime_types, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_name", (DL_FUNC) &R_gtk_source_language_get_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_section", (DL_FUNC) &R_gtk_source_language_get_section, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_style_fallback", (DL_FUNC) &R_gtk_source_language_get_style_fallback, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_style_ids", (DL_FUNC) &R_gtk_source_language_get_style_ids, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_get_style_name", (DL_FUNC) &R_gtk_source_language_get_style_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_manager_new", (DL_FUNC) &R_gtk_source_language_manager_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_manager_get_default", (DL_FUNC) &R_gtk_source_language_manager_get_default, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_manager_get_language", (DL_FUNC) &R_gtk_source_language_manager_get_language, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_manager_get_language_ids", (DL_FUNC) &R_gtk_source_language_manager_get_language_ids, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_manager_get_search_path", (DL_FUNC) &R_gtk_source_language_manager_get_search_path, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_manager_guess_language", (DL_FUNC) &R_gtk_source_language_manager_guess_language, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_language_manager_set_search_path", (DL_FUNC) &R_gtk_source_language_manager_set_search_path, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_map_new", (DL_FUNC) &R_gtk_source_map_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_map_get_view", (DL_FUNC) &R_gtk_source_map_get_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_map_set_view", (DL_FUNC) &R_gtk_source_map_set_view, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_new", (DL_FUNC) &R_gtk_source_mark_new, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_get_category", (DL_FUNC) &R_gtk_source_mark_get_category, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_next", (DL_FUNC) &R_gtk_source_mark_next, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_prev", (DL_FUNC) &R_gtk_source_mark_prev, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_new", (DL_FUNC) &R_gtk_source_mark_attributes_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_get_background", (DL_FUNC) &R_gtk_source_mark_attributes_get_background, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_get_gicon", (DL_FUNC) &R_gtk_source_mark_attributes_get_gicon, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_get_icon_name", (DL_FUNC) &R_gtk_source_mark_attributes_get_icon_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_get_pixbuf", (DL_FUNC) &R_gtk_source_mark_attributes_get_pixbuf, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_get_tooltip_markup", (DL_FUNC) &R_gtk_source_mark_attributes_get_tooltip_markup, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_get_tooltip_text", (DL_FUNC) &R_gtk_source_mark_attributes_get_tooltip_text, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_render_icon", (DL_FUNC) &R_gtk_source_mark_attributes_render_icon, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_set_background", (DL_FUNC) &R_gtk_source_mark_attributes_set_background, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_set_gicon", (DL_FUNC) &R_gtk_source_mark_attributes_set_gicon, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_set_icon_name", (DL_FUNC) &R_gtk_source_mark_attributes_set_icon_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_mark_attributes_set_pixbuf", (DL_FUNC) &R_gtk_source_mark_attributes_set_pixbuf, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_new", (DL_FUNC) &R_gtk_source_print_compositor_new, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_new_from_view", (DL_FUNC) &R_gtk_source_print_compositor_new_from_view, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_draw_page", (DL_FUNC) &R_gtk_source_print_compositor_draw_page, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_body_font_name", (DL_FUNC) &R_gtk_source_print_compositor_get_body_font_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_bottom_margin", (DL_FUNC) &R_gtk_source_print_compositor_get_bottom_margin, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_buffer", (DL_FUNC) &R_gtk_source_print_compositor_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_footer_font_name", (DL_FUNC) &R_gtk_source_print_compositor_get_footer_font_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_header_font_name", (DL_FUNC) &R_gtk_source_print_compositor_get_header_font_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_highlight_syntax", (DL_FUNC) &R_gtk_source_print_compositor_get_highlight_syntax, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_left_margin", (DL_FUNC) &R_gtk_source_print_compositor_get_left_margin, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_line_numbers_font_name", (DL_FUNC) &R_gtk_source_print_compositor_get_line_numbers_font_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_n_pages", (DL_FUNC) &R_gtk_source_print_compositor_get_n_pages, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_pagination_progress", (DL_FUNC) &R_gtk_source_print_compositor_get_pagination_progress, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_print_footer", (DL_FUNC) &R_gtk_source_print_compositor_get_print_footer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_print_header", (DL_FUNC) &R_gtk_source_print_compositor_get_print_header, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_print_line_numbers", (DL_FUNC) &R_gtk_source_print_compositor_get_print_line_numbers, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_right_margin", (DL_FUNC) &R_gtk_source_print_compositor_get_right_margin, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_tab_width", (DL_FUNC) &R_gtk_source_print_compositor_get_tab_width, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_top_margin", (DL_FUNC) &R_gtk_source_print_compositor_get_top_margin, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_get_wrap_mode", (DL_FUNC) &R_gtk_source_print_compositor_get_wrap_mode, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_paginate", (DL_FUNC) &R_gtk_source_print_compositor_paginate, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_body_font_name", (DL_FUNC) &R_gtk_source_print_compositor_set_body_font_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_bottom_margin", (DL_FUNC) &R_gtk_source_print_compositor_set_bottom_margin, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_footer_font_name", (DL_FUNC) &R_gtk_source_print_compositor_set_footer_font_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_footer_format", (DL_FUNC) &R_gtk_source_print_compositor_set_footer_format, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_header_font_name", (DL_FUNC) &R_gtk_source_print_compositor_set_header_font_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_header_format", (DL_FUNC) &R_gtk_source_print_compositor_set_header_format, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_highlight_syntax", (DL_FUNC) &R_gtk_source_print_compositor_set_highlight_syntax, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_left_margin", (DL_FUNC) &R_gtk_source_print_compositor_set_left_margin, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_line_numbers_font_name", (DL_FUNC) &R_gtk_source_print_compositor_set_line_numbers_font_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_print_footer", (DL_FUNC) &R_gtk_source_print_compositor_set_print_footer, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_print_header", (DL_FUNC) &R_gtk_source_print_compositor_set_print_header, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_print_line_numbers", (DL_FUNC) &R_gtk_source_print_compositor_set_print_line_numbers, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_right_margin", (DL_FUNC) &R_gtk_source_print_compositor_set_right_margin, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_tab_width", (DL_FUNC) &R_gtk_source_print_compositor_set_tab_width, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_top_margin", (DL_FUNC) &R_gtk_source_print_compositor_set_top_margin, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_print_compositor_set_wrap_mode", (DL_FUNC) &R_gtk_source_print_compositor_set_wrap_mode, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_new", (DL_FUNC) &R_gtk_source_region_new, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_add_region", (DL_FUNC) &R_gtk_source_region_add_region, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_add_subregion", (DL_FUNC) &R_gtk_source_region_add_subregion, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_get_bounds", (DL_FUNC) &R_gtk_source_region_get_bounds, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_get_buffer", (DL_FUNC) &R_gtk_source_region_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_get_start_region_iter", (DL_FUNC) &R_gtk_source_region_get_start_region_iter, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_intersect_region", (DL_FUNC) &R_gtk_source_region_intersect_region, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_intersect_subregion", (DL_FUNC) &R_gtk_source_region_intersect_subregion, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_is_empty", (DL_FUNC) &R_gtk_source_region_is_empty, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_subtract_region", (DL_FUNC) &R_gtk_source_region_subtract_region, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_subtract_subregion", (DL_FUNC) &R_gtk_source_region_subtract_subregion, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_to_string", (DL_FUNC) &R_gtk_source_region_to_string, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_iter_get_subregion", (DL_FUNC) &R_gtk_source_region_iter_get_subregion, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_iter_is_end", (DL_FUNC) &R_gtk_source_region_iter_is_end, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_region_iter_next", (DL_FUNC) &R_gtk_source_region_iter_next, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_new", (DL_FUNC) &R_gtk_source_search_context_new, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_backward", (DL_FUNC) &R_gtk_source_search_context_backward, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_backward_async", (DL_FUNC) &R_gtk_source_search_context_backward_async, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_backward_finish", (DL_FUNC) &R_gtk_source_search_context_backward_finish, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_forward", (DL_FUNC) &R_gtk_source_search_context_forward, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_forward_async", (DL_FUNC) &R_gtk_source_search_context_forward_async, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_forward_finish", (DL_FUNC) &R_gtk_source_search_context_forward_finish, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_get_buffer", (DL_FUNC) &R_gtk_source_search_context_get_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_get_highlight", (DL_FUNC) &R_gtk_source_search_context_get_highlight, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_get_match_style", (DL_FUNC) &R_gtk_source_search_context_get_match_style, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_get_occurrence_position", (DL_FUNC) &R_gtk_source_search_context_get_occurrence_position, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_get_occurrences_count", (DL_FUNC) &R_gtk_source_search_context_get_occurrences_count, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_get_regex_error", (DL_FUNC) &R_gtk_source_search_context_get_regex_error, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_get_settings", (DL_FUNC) &R_gtk_source_search_context_get_settings, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_replace", (DL_FUNC) &R_gtk_source_search_context_replace, 5},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_replace_all", (DL_FUNC) &R_gtk_source_search_context_replace_all, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_set_highlight", (DL_FUNC) &R_gtk_source_search_context_set_highlight, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_context_set_match_style", (DL_FUNC) &R_gtk_source_search_context_set_match_style, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_new", (DL_FUNC) &R_gtk_source_search_settings_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_get_at_word_boundaries", (DL_FUNC) &R_gtk_source_search_settings_get_at_word_boundaries, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_get_case_sensitive", (DL_FUNC) &R_gtk_source_search_settings_get_case_sensitive, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_get_regex_enabled", (DL_FUNC) &R_gtk_source_search_settings_get_regex_enabled, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_get_search_text", (DL_FUNC) &R_gtk_source_search_settings_get_search_text, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_get_wrap_around", (DL_FUNC) &R_gtk_source_search_settings_get_wrap_around, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_set_at_word_boundaries", (DL_FUNC) &R_gtk_source_search_settings_set_at_word_boundaries, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_set_case_sensitive", (DL_FUNC) &R_gtk_source_search_settings_set_case_sensitive, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_set_regex_enabled", (DL_FUNC) &R_gtk_source_search_settings_set_regex_enabled, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_set_search_text", (DL_FUNC) &R_gtk_source_search_settings_set_search_text, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_search_settings_set_wrap_around", (DL_FUNC) &R_gtk_source_search_settings_set_wrap_around, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_new", (DL_FUNC) &R_gtk_source_snippet_new, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_add_chunk", (DL_FUNC) &R_gtk_source_snippet_add_chunk, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_copy", (DL_FUNC) &R_gtk_source_snippet_copy, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_context", (DL_FUNC) &R_gtk_source_snippet_get_context, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_description", (DL_FUNC) &R_gtk_source_snippet_get_description, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_focus_position", (DL_FUNC) &R_gtk_source_snippet_get_focus_position, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_language_id", (DL_FUNC) &R_gtk_source_snippet_get_language_id, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_n_chunks", (DL_FUNC) &R_gtk_source_snippet_get_n_chunks, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_name", (DL_FUNC) &R_gtk_source_snippet_get_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_nth_chunk", (DL_FUNC) &R_gtk_source_snippet_get_nth_chunk, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_get_trigger", (DL_FUNC) &R_gtk_source_snippet_get_trigger, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_set_description", (DL_FUNC) &R_gtk_source_snippet_set_description, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_set_language_id", (DL_FUNC) &R_gtk_source_snippet_set_language_id, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_set_name", (DL_FUNC) &R_gtk_source_snippet_set_name, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_set_trigger", (DL_FUNC) &R_gtk_source_snippet_set_trigger, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_new", (DL_FUNC) &R_gtk_source_snippet_chunk_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_copy", (DL_FUNC) &R_gtk_source_snippet_chunk_copy, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_get_context", (DL_FUNC) &R_gtk_source_snippet_chunk_get_context, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_get_focus_position", (DL_FUNC) &R_gtk_source_snippet_chunk_get_focus_position, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_get_spec", (DL_FUNC) &R_gtk_source_snippet_chunk_get_spec, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_get_text", (DL_FUNC) &R_gtk_source_snippet_chunk_get_text, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_get_text_set", (DL_FUNC) &R_gtk_source_snippet_chunk_get_text_set, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_get_tooltip_text", (DL_FUNC) &R_gtk_source_snippet_chunk_get_tooltip_text, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_set_context", (DL_FUNC) &R_gtk_source_snippet_chunk_set_context, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_set_focus_position", (DL_FUNC) &R_gtk_source_snippet_chunk_set_focus_position, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_set_spec", (DL_FUNC) &R_gtk_source_snippet_chunk_set_spec, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_set_text", (DL_FUNC) &R_gtk_source_snippet_chunk_set_text, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_set_text_set", (DL_FUNC) &R_gtk_source_snippet_chunk_set_text_set, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_chunk_set_tooltip_text", (DL_FUNC) &R_gtk_source_snippet_chunk_set_tooltip_text, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_new", (DL_FUNC) &R_gtk_source_snippet_context_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_clear_variables", (DL_FUNC) &R_gtk_source_snippet_context_clear_variables, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_expand", (DL_FUNC) &R_gtk_source_snippet_context_expand, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_get_variable", (DL_FUNC) &R_gtk_source_snippet_context_get_variable, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_set_constant", (DL_FUNC) &R_gtk_source_snippet_context_set_constant, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_set_line_prefix", (DL_FUNC) &R_gtk_source_snippet_context_set_line_prefix, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_set_tab_width", (DL_FUNC) &R_gtk_source_snippet_context_set_tab_width, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_set_use_spaces", (DL_FUNC) &R_gtk_source_snippet_context_set_use_spaces, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_context_set_variable", (DL_FUNC) &R_gtk_source_snippet_context_set_variable, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_manager_get_default", (DL_FUNC) &R_gtk_source_snippet_manager_get_default, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_manager_get_search_path", (DL_FUNC) &R_gtk_source_snippet_manager_get_search_path, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_manager_get_snippet", (DL_FUNC) &R_gtk_source_snippet_manager_get_snippet, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_manager_list_groups", (DL_FUNC) &R_gtk_source_snippet_manager_list_groups, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_manager_list_matching", (DL_FUNC) &R_gtk_source_snippet_manager_list_matching, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_snippet_manager_set_search_path", (DL_FUNC) &R_gtk_source_snippet_manager_set_search_path, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_new", (DL_FUNC) &R_gtk_source_space_drawer_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_bind_matrix_setting", (DL_FUNC) &R_gtk_source_space_drawer_bind_matrix_setting, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_get_enable_matrix", (DL_FUNC) &R_gtk_source_space_drawer_get_enable_matrix, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_get_matrix", (DL_FUNC) &R_gtk_source_space_drawer_get_matrix, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_get_types_for_locations", (DL_FUNC) &R_gtk_source_space_drawer_get_types_for_locations, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_set_enable_matrix", (DL_FUNC) &R_gtk_source_space_drawer_set_enable_matrix, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_set_matrix", (DL_FUNC) &R_gtk_source_space_drawer_set_matrix, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_space_drawer_set_types_for_locations", (DL_FUNC) &R_gtk_source_space_drawer_set_types_for_locations, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_apply", (DL_FUNC) &R_gtk_source_style_apply, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_copy", (DL_FUNC) &R_gtk_source_style_copy, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_get_authors", (DL_FUNC) &R_gtk_source_style_scheme_get_authors, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_get_description", (DL_FUNC) &R_gtk_source_style_scheme_get_description, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_get_filename", (DL_FUNC) &R_gtk_source_style_scheme_get_filename, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_get_id", (DL_FUNC) &R_gtk_source_style_scheme_get_id, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_get_name", (DL_FUNC) &R_gtk_source_style_scheme_get_name, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_get_style", (DL_FUNC) &R_gtk_source_style_scheme_get_style, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_chooser_get_style_scheme", (DL_FUNC) &R_gtk_source_style_scheme_chooser_get_style_scheme, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_chooser_set_style_scheme", (DL_FUNC) &R_gtk_source_style_scheme_chooser_set_style_scheme, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_chooser_button_new", (DL_FUNC) &R_gtk_source_style_scheme_chooser_button_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_chooser_widget_new", (DL_FUNC) &R_gtk_source_style_scheme_chooser_widget_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_new", (DL_FUNC) &R_gtk_source_style_scheme_manager_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_get_default", (DL_FUNC) &R_gtk_source_style_scheme_manager_get_default, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_append_search_path", (DL_FUNC) &R_gtk_source_style_scheme_manager_append_search_path, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_force_rescan", (DL_FUNC) &R_gtk_source_style_scheme_manager_force_rescan, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_get_scheme", (DL_FUNC) &R_gtk_source_style_scheme_manager_get_scheme, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_get_scheme_ids", (DL_FUNC) &R_gtk_source_style_scheme_manager_get_scheme_ids, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_get_search_path", (DL_FUNC) &R_gtk_source_style_scheme_manager_get_search_path, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_prepend_search_path", (DL_FUNC) &R_gtk_source_style_scheme_manager_prepend_search_path, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_manager_set_search_path", (DL_FUNC) &R_gtk_source_style_scheme_manager_set_search_path, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_preview_get_selected", (DL_FUNC) &R_gtk_source_style_scheme_preview_get_selected, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_style_scheme_preview_set_selected", (DL_FUNC) &R_gtk_source_style_scheme_preview_set_selected, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_tag_new", (DL_FUNC) &R_gtk_source_tag_new, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_new", (DL_FUNC) &R_gtk_source_view_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_new_with_buffer", (DL_FUNC) &R_gtk_source_view_new_with_buffer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_auto_indent", (DL_FUNC) &R_gtk_source_view_get_auto_indent, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_background_pattern", (DL_FUNC) &R_gtk_source_view_get_background_pattern, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_completion", (DL_FUNC) &R_gtk_source_view_get_completion, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_enable_snippets", (DL_FUNC) &R_gtk_source_view_get_enable_snippets, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_gutter", (DL_FUNC) &R_gtk_source_view_get_gutter, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_highlight_current_line", (DL_FUNC) &R_gtk_source_view_get_highlight_current_line, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_hover", (DL_FUNC) &R_gtk_source_view_get_hover, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_indent_on_tab", (DL_FUNC) &R_gtk_source_view_get_indent_on_tab, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_indent_width", (DL_FUNC) &R_gtk_source_view_get_indent_width, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_indenter", (DL_FUNC) &R_gtk_source_view_get_indenter, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_insert_spaces_instead_of_tabs", (DL_FUNC) &R_gtk_source_view_get_insert_spaces_instead_of_tabs, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_mark_attributes", (DL_FUNC) &R_gtk_source_view_get_mark_attributes, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_right_margin_position", (DL_FUNC) &R_gtk_source_view_get_right_margin_position, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_show_line_marks", (DL_FUNC) &R_gtk_source_view_get_show_line_marks, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_show_line_numbers", (DL_FUNC) &R_gtk_source_view_get_show_line_numbers, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_show_right_margin", (DL_FUNC) &R_gtk_source_view_get_show_right_margin, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_smart_backspace", (DL_FUNC) &R_gtk_source_view_get_smart_backspace, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_smart_home_end", (DL_FUNC) &R_gtk_source_view_get_smart_home_end, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_space_drawer", (DL_FUNC) &R_gtk_source_view_get_space_drawer, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_tab_width", (DL_FUNC) &R_gtk_source_view_get_tab_width, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_get_visual_column", (DL_FUNC) &R_gtk_source_view_get_visual_column, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_indent_lines", (DL_FUNC) &R_gtk_source_view_indent_lines, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_push_snippet", (DL_FUNC) &R_gtk_source_view_push_snippet, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_auto_indent", (DL_FUNC) &R_gtk_source_view_set_auto_indent, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_background_pattern", (DL_FUNC) &R_gtk_source_view_set_background_pattern, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_enable_snippets", (DL_FUNC) &R_gtk_source_view_set_enable_snippets, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_highlight_current_line", (DL_FUNC) &R_gtk_source_view_set_highlight_current_line, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_indent_on_tab", (DL_FUNC) &R_gtk_source_view_set_indent_on_tab, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_indent_width", (DL_FUNC) &R_gtk_source_view_set_indent_width, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_indenter", (DL_FUNC) &R_gtk_source_view_set_indenter, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_insert_spaces_instead_of_tabs", (DL_FUNC) &R_gtk_source_view_set_insert_spaces_instead_of_tabs, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_mark_attributes", (DL_FUNC) &R_gtk_source_view_set_mark_attributes, 4},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_right_margin_position", (DL_FUNC) &R_gtk_source_view_set_right_margin_position, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_show_line_marks", (DL_FUNC) &R_gtk_source_view_set_show_line_marks, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_show_line_numbers", (DL_FUNC) &R_gtk_source_view_set_show_line_numbers, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_show_right_margin", (DL_FUNC) &R_gtk_source_view_set_show_right_margin, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_smart_backspace", (DL_FUNC) &R_gtk_source_view_set_smart_backspace, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_smart_home_end", (DL_FUNC) &R_gtk_source_view_set_smart_home_end, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_set_tab_width", (DL_FUNC) &R_gtk_source_view_set_tab_width, 2},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_view_unindent_lines", (DL_FUNC) &R_gtk_source_view_unindent_lines, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_vim_im_context_new", (DL_FUNC) &R_gtk_source_vim_im_context_new, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_check_version", (DL_FUNC) &R_gtk_source_check_version, 3},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_finalize", (DL_FUNC) &R_gtk_source_finalize, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_get_major_version", (DL_FUNC) &R_gtk_source_get_major_version, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_get_micro_version", (DL_FUNC) &R_gtk_source_get_micro_version, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_get_minor_version", (DL_FUNC) &R_gtk_source_get_minor_version, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_init", (DL_FUNC) &R_gtk_source_init, 0},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_utils_escape_search_text", (DL_FUNC) &R_gtk_source_utils_escape_search_text, 1},
+#endif
+#ifdef HAVE_GTKSOURCE
+    {"R_gtk_source_utils_unescape_search_text", (DL_FUNC) &R_gtk_source_utils_unescape_search_text, 1},
+#endif
     {"R_pango_attr_font_desc_new", (DL_FUNC) &R_pango_attr_font_desc_new, 1},
     {"R_pango_attr_font_features_new", (DL_FUNC) &R_pango_attr_font_features_new, 1},
     {"R_pango_attr_iterator_copy", (DL_FUNC) &R_pango_attr_iterator_copy, 1},
@@ -15419,6 +18036,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"R_gtk_main_iteration", (DL_FUNC) &R_gtk_main_iteration, 0},
     {"R_gtk_main_iteration_do", (DL_FUNC) &R_gtk_main_iteration_do, 1},
     {"R_macos_set_app_icon", (DL_FUNC) &R_macos_set_app_icon, 1},
+    {"R_have_gtksource", (DL_FUNC) &R_have_gtksource, 0},
     {"R_extptr_address", (DL_FUNC) &R_extptr_address, 1},
     {"R_gtk_window_add_close_shortcut", (DL_FUNC) &R_gtk_window_add_close_shortcut, 1},
     {"R_gtk_get_ui_state", (DL_FUNC) &R_gtk_get_ui_state, 1},

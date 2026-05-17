@@ -11,7 +11,8 @@ RGirGen::generate_bindings(
     "/opt/homebrew/share/gir-1.0/Pango-1.0.gir",
     "/opt/homebrew/share/gir-1.0/GdkPixbuf-2.0.gir",
     "/opt/homebrew/share/gir-1.0/Graphene-1.0.gir",
-    "/opt/homebrew/share/gir-1.0/Gsk-4.0.gir"
+    "/opt/homebrew/share/gir-1.0/Gsk-4.0.gir",
+    "/opt/homebrew/share/gir-1.0/GtkSource-5.gir"
   ),
   out_dir = "."
 )

@@ -2,6 +2,9 @@
 #define RGTK4_AUTOGEN_CALLBACKS_H
 
 #include <gtk/gtk.h>
+#ifdef HAVE_GTKSOURCE
+#include <gtksourceview/gtksource.h>
+#endif
 #include <glib.h>
 #include <glib-object.h>
 #include <gio/gio.h>
@@ -62,7 +65,7 @@ extern gint _rgtk4_cb_SequenceIterCompareFunc(GSequenceIter* a, GSequenceIter* b
 extern void _rgtk4_cb_ref(gpointer cb_data);
 extern void _rgtk4_cb_unref(gpointer cb_data);
 extern void _rgtk4_cb_SourceDisposeFunc(GSource* source);
-extern void _rgtk4_cb_SourceDummyMarshal();
+extern void _rgtk4_cb_SourceDummyMarshal(void);
 extern gboolean _rgtk4_cb_SourceFunc(gpointer user_data);
 extern gboolean _rgtk4_cb_SourceFuncsCheckFunc(GSource* source);
 extern void _rgtk4_cb_SourceFuncsFinalizeFunc(GSource* source);
@@ -71,15 +74,15 @@ extern void _rgtk4_cb_SourceOnceFunc(gpointer user_data);
 extern void _rgtk4_cb_SpawnChildSetupFunc(gpointer data);
 extern void _rgtk4_cb_TestDataFunc(gconstpointer user_data);
 extern void _rgtk4_cb_TestFixtureFunc(gpointer fixture, gconstpointer user_data);
-extern void _rgtk4_cb_TestFunc();
+extern void _rgtk4_cb_TestFunc(void);
 extern gboolean _rgtk4_cb_TestLogFatalFunc(const gchar* log_domain, GLogLevelFlags log_level, const gchar* message, gpointer user_data);
 extern gpointer _rgtk4_cb_ThreadFunc(gpointer data);
-extern GMutex* _rgtk4_cb_mutex_new();
+extern GMutex* _rgtk4_cb_mutex_new(void);
 extern void _rgtk4_cb_mutex_lock(GMutex* mutex);
 extern gboolean _rgtk4_cb_mutex_trylock(GMutex* mutex);
 extern void _rgtk4_cb_mutex_unlock(GMutex* mutex);
 extern void _rgtk4_cb_mutex_free(GMutex* mutex);
-extern GCond* _rgtk4_cb_cond_new();
+extern GCond* _rgtk4_cb_cond_new(void);
 extern void _rgtk4_cb_cond_signal(GCond* cond);
 extern void _rgtk4_cb_cond_broadcast(GCond* cond);
 extern void _rgtk4_cb_cond_wait(GCond* cond, GMutex* mutex);
@@ -88,21 +91,21 @@ extern void _rgtk4_cb_cond_free(GCond* cond);
 extern GPrivate* _rgtk4_cb_private_new(GDestroyNotify destructor);
 extern gpointer _rgtk4_cb_private_get(GPrivate* private_key);
 extern void _rgtk4_cb_private_set(GPrivate* private_key, gpointer data);
-extern void _rgtk4_cb_thread_yield();
+extern void _rgtk4_cb_thread_yield(void);
 extern void _rgtk4_cb_thread_join(gpointer thread);
-extern void _rgtk4_cb_thread_exit();
+extern void _rgtk4_cb_thread_exit(void);
 extern void _rgtk4_cb_thread_self(gpointer thread);
 extern gboolean _rgtk4_cb_thread_equal(gpointer thread1, gpointer thread2);
 extern const gchar* _rgtk4_cb_TranslateFunc(const gchar* str, gpointer data);
 extern gboolean _rgtk4_cb_TraverseFunc(gpointer key, gpointer value, gpointer data);
 extern gboolean _rgtk4_cb_TraverseNodeFunc(GTreeNode* node, gpointer data);
-extern void _rgtk4_cb_VoidFunc();
+extern void _rgtk4_cb_VoidFunc(void);
 extern void _rgtk4_cb_BaseFinalizeFunc(gpointer g_class);
 extern void _rgtk4_cb_BaseInitFunc(gpointer g_class);
 extern gboolean _rgtk4_cb_BindingTransformFunc(GBinding* binding, const GValue* from_value, GValue* to_value, gpointer user_data);
 extern gpointer _rgtk4_cb_BoxedCopyFunc(gpointer boxed);
 extern void _rgtk4_cb_BoxedFreeFunc(gpointer boxed);
-extern void _rgtk4_cb_Callback();
+extern void _rgtk4_cb_Callback(void);
 extern void _rgtk4_cb_ClassFinalizeFunc(gpointer g_class, gpointer class_data);
 extern void _rgtk4_cb_ClassInitFunc(gpointer g_class, gpointer class_data);
 extern void _rgtk4_cb_marshal(GClosure* closure, GValue* return_value, guint n_param_values, const GValue* param_values, gpointer invocation_hint, gpointer marshal_data);
@@ -132,10 +135,10 @@ extern void _rgtk4_cb_ToggleNotify(gpointer data, GObject* object, gboolean is_l
 extern gboolean _rgtk4_cb_TypeClassCacheFunc(gpointer cache_data, GTypeClass* g_class);
 extern void _rgtk4_cb_TypeInterfaceCheckFunc(gpointer check_data, gpointer g_iface);
 extern void _rgtk4_cb_unload(GTypeModule* module);
-extern void _rgtk4_cb_reserved1();
-extern void _rgtk4_cb_reserved2();
-extern void _rgtk4_cb_reserved3();
-extern void _rgtk4_cb_reserved4();
+extern void _rgtk4_cb_reserved1(void);
+extern void _rgtk4_cb_reserved2(void);
+extern void _rgtk4_cb_reserved3(void);
+extern void _rgtk4_cb_reserved4(void);
 extern void _rgtk4_cb_TypePluginCompleteInterfaceInfo(GTypePlugin* plugin, GType instance_type, GType interface_type, GInterfaceInfo* info);
 extern void _rgtk4_cb_TypePluginCompleteTypeInfo(GTypePlugin* plugin, GType g_type, GTypeInfo* info, GTypeValueTable* value_table);
 extern void _rgtk4_cb_TypePluginUnuse(GTypePlugin* plugin);
@@ -148,7 +151,9 @@ extern gchar* _rgtk4_cb_TypeValueLCopyFunc(const GValue* value, guint n_collect_
 extern gpointer _rgtk4_cb_TypeValuePeekPointerFunc(const GValue* value);
 extern void _rgtk4_cb_ValueTransform(const GValue* src_value, GValue* dest_value);
 extern void _rgtk4_cb_WeakNotify(gpointer data, GObject* where_the_object_was);
-extern void _rgtk4_cb_activate(GtkListBoxRow* row);
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_activate(GtkSourceGutterRenderer* renderer, GtkTextIter* iter, GdkRectangle* area, guint button, GdkModifierType state, gint n_presses);
+#endif
 extern void _rgtk4_cb_change_state(GAction* action, GVariant* value);
 extern gboolean _rgtk4_cb_has_action(GActionGroup* action_group, const gchar* action_name);
 extern gchar** _rgtk4_cb_list_actions(GActionGroup* action_group);
@@ -194,9 +199,9 @@ extern char* _rgtk4_cb_get_startup_notify_id(GAppLaunchContext* context, GAppInf
 extern void _rgtk4_cb_launch_failed(GAppLaunchContext* context, const char* startup_notify_id);
 extern void _rgtk4_cb_launched(GAppLaunchContext* context, GAppInfo* info, GVariant* platform_data);
 extern void _rgtk4_cb_launch_started(GAppLaunchContext* context, GAppInfo* info, GVariant* platform_data);
-extern void _rgtk4_cb__g_reserved1();
-extern void _rgtk4_cb__g_reserved2();
-extern void _rgtk4_cb__g_reserved3();
+extern void _rgtk4_cb__g_reserved1(void);
+extern void _rgtk4_cb__g_reserved2(void);
+extern void _rgtk4_cb__g_reserved3(void);
 extern void _rgtk4_cb_startup(GApplication* application);
 extern void _rgtk4_cb_open(GtkMediaFile* self);
 extern int _rgtk4_cb_command_line(GApplication* application, GApplicationCommandLine* command_line);
@@ -217,8 +222,8 @@ extern gpointer _rgtk4_cb_get_user_data(GAsyncResult* res);
 extern GObject* _rgtk4_cb_get_source_object(GAsyncResult* res);
 extern gboolean _rgtk4_cb_is_tagged(GAsyncResult* res, gpointer source_tag);
 extern void _rgtk4_cb_fill_async(GBufferedInputStream* stream, gssize count, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
-extern void _rgtk4_cb__g_reserved4();
-extern void _rgtk4_cb__g_reserved5();
+extern void _rgtk4_cb__g_reserved4(void);
+extern void _rgtk4_cb__g_reserved5(void);
 extern void _rgtk4_cb_cancelled(GCancellable* cancellable);
 extern gboolean _rgtk4_cb_CancellableSourceFunc(GCancellable* cancellable, gpointer data);
 extern void _rgtk4_cb_reset(GtkIMContext* context);
@@ -268,8 +273,8 @@ extern GIcon* _rgtk4_cb_get_symbolic_icon(GVolume* volume);
 extern gboolean _rgtk4_cb_is_removable(GDrive* drive);
 extern void _rgtk4_cb_next_files_async(GFileEnumerator* enumerator, int num_files, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 extern void _rgtk4_cb_close_async(GOutputStream* stream, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
-extern void _rgtk4_cb__g_reserved6();
-extern void _rgtk4_cb__g_reserved7();
+extern void _rgtk4_cb__g_reserved6(void);
+extern void _rgtk4_cb__g_reserved7(void);
 extern goffset _rgtk4_cb_tell(GSeekable* seekable);
 extern gboolean _rgtk4_cb_can_seek(GSeekable* seekable);
 extern void _rgtk4_cb_seek(GtkMediaStream* self, gint64 timestamp);
@@ -292,10 +297,10 @@ extern void _rgtk4_cb_enumerate_children_async(GFile* file, const char* attribut
 extern void _rgtk4_cb_query_filesystem_info_async(GFile* file, const char* attributes, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 extern void _rgtk4_cb_find_enclosing_mount_async(GFile* file, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 extern void _rgtk4_cb_set_display_name_async(GFile* file, const char* display_name, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
-extern void _rgtk4_cb__query_settable_attributes_async();
-extern void _rgtk4_cb__query_settable_attributes_finish();
-extern void _rgtk4_cb__query_writable_namespaces_async();
-extern void _rgtk4_cb__query_writable_namespaces_finish();
+extern void _rgtk4_cb__query_settable_attributes_async(void);
+extern void _rgtk4_cb__query_settable_attributes_finish(void);
+extern void _rgtk4_cb__query_writable_namespaces_async(void);
+extern void _rgtk4_cb__query_writable_namespaces_finish(void);
 extern void _rgtk4_cb_set_attributes_async(GFile* file, GFileInfo* info, GFileQueryInfoFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 extern void _rgtk4_cb_read_async(GInputStream* stream, void* buffer, gsize count, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 extern void _rgtk4_cb_append_to_async(GFile* file, GFileCreateFlags flags, int io_priority, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
@@ -329,9 +334,9 @@ extern void _rgtk4_cb_got_completion_data(GFilenameCompleter* filename_completer
 extern gboolean _rgtk4_cb_IOSchedulerJobFunc(GIOSchedulerJob* job, GCancellable* cancellable, gpointer data);
 extern GInputStream* _rgtk4_cb_get_input_stream(GIOStream* stream);
 extern GOutputStream* _rgtk4_cb_get_output_stream(GIOStream* stream);
-extern void _rgtk4_cb__g_reserved8();
-extern void _rgtk4_cb__g_reserved9();
-extern void _rgtk4_cb__g_reserved10();
+extern void _rgtk4_cb__g_reserved8(void);
+extern void _rgtk4_cb__g_reserved9(void);
+extern void _rgtk4_cb__g_reserved10(void);
 extern gboolean _rgtk4_cb_to_tokens(GIcon* icon, GPtrArray* tokens, gint* out_version);
 extern void _rgtk4_cb_serialize(GSocketControlMessage* message, gpointer data);
 extern gchar* _rgtk4_cb_to_string(GSocketConnectable* connectable);
@@ -381,7 +386,7 @@ extern gboolean _rgtk4_cb_is_writable(GPollableOutputStream* stream);
 extern gboolean _rgtk4_cb_PollableSourceFunc(GObject* pollable_stream, gpointer data);
 extern void _rgtk4_cb_connect_async(GProxy* proxy, GIOStream* connection, GProxyAddress* proxy_address, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 extern gboolean _rgtk4_cb_supports_hostname(GProxy* proxy);
-extern gboolean _rgtk4_cb_is_supported();
+extern gboolean _rgtk4_cb_is_supported(void);
 extern void _rgtk4_cb_lookup_async(GProxyResolver* resolver, const gchar* uri, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
 extern gpointer _rgtk4_cb_ReallocFunc(gpointer data, gsize size);
 extern void _rgtk4_cb_activate_action_full(GRemoteActionGroup* remote, const gchar* action_name, GVariant* parameter, GVariant* platform_data);
@@ -421,14 +426,14 @@ extern gboolean _rgtk4_cb_SocketSourceFunc(GSocket* socket, GIOCondition conditi
 extern void _rgtk4_cb_TaskThreadFunc(GTask* task, gpointer source_object, gpointer task_data, GCancellable* cancellable);
 extern gboolean _rgtk4_cb_run(GThreadedSocketService* service, GSocketConnection* connection, GObject* source_object);
 extern gboolean _rgtk4_cb_supports_tls(GTlsBackend* backend);
-extern GType _rgtk4_cb_get_certificate_type();
-extern GType _rgtk4_cb_get_client_connection_type();
-extern GType _rgtk4_cb_get_server_connection_type();
-extern GType _rgtk4_cb_get_file_database_type();
+extern GType _rgtk4_cb_get_certificate_type(void);
+extern GType _rgtk4_cb_get_client_connection_type(void);
+extern GType _rgtk4_cb_get_server_connection_type(void);
+extern GType _rgtk4_cb_get_file_database_type(void);
 extern GTlsDatabase* _rgtk4_cb_get_default_database(GTlsBackend* backend);
 extern gboolean _rgtk4_cb_supports_dtls(GTlsBackend* backend);
-extern GType _rgtk4_cb_get_dtls_client_connection_type();
-extern GType _rgtk4_cb_get_dtls_server_connection_type();
+extern GType _rgtk4_cb_get_dtls_client_connection_type(void);
+extern GType _rgtk4_cb_get_dtls_server_connection_type(void);
 extern GTlsCertificateFlags _rgtk4_cb_verify(GTlsCertificate* cert, GSocketConnectable* identity, GTlsCertificate* trusted_ca);
 extern void _rgtk4_cb_copy_session_state(GTlsClientConnection* conn, GTlsClientConnection* source);
 extern void _rgtk4_cb_verify_chain_async(GTlsDatabase* self, GTlsCertificate* chain, const gchar* purpose, GSocketConnectable* identity, GTlsInteraction* interaction, GTlsDatabaseVerifyFlags flags, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
@@ -510,10 +515,10 @@ extern void _rgtk4_cb_set_action_name(GtkActionable* actionable, const char* act
 extern GVariant* _rgtk4_cb_get_action_target_value(GtkActionable* actionable);
 extern void _rgtk4_cb_set_action_target_value(GtkActionable* actionable, GVariant* target_value);
 extern void _rgtk4_cb_value_changed(GtkScaleButton* button, double value);
-extern void _rgtk4_cb__gtk_reserved1();
-extern void _rgtk4_cb__gtk_reserved2();
-extern void _rgtk4_cb__gtk_reserved3();
-extern void _rgtk4_cb__gtk_reserved4();
+extern void _rgtk4_cb__gtk_reserved1(void);
+extern void _rgtk4_cb__gtk_reserved2(void);
+extern void _rgtk4_cb__gtk_reserved3(void);
+extern void _rgtk4_cb__gtk_reserved4(void);
 extern void _rgtk4_cb_window_added(GtkApplication* application, GtkWindow* window);
 extern void _rgtk4_cb_window_removed(GtkApplication* application, GtkWindow* window);
 extern int _rgtk4_cb_AssistantPageFunc(int current_page, gpointer data);
@@ -589,10 +594,10 @@ extern GtkEditable* _rgtk4_cb_get_delegate(GtkEditable* editable);
 extern void _rgtk4_cb_inserted_text(GtkEntryBuffer* buffer, guint position, const char* chars, guint n_chars);
 extern void _rgtk4_cb_deleted_text(GtkEntryBuffer* buffer, guint position, guint n_chars);
 extern guint _rgtk4_cb_get_length(GtkEntryBuffer* buffer);
-extern void _rgtk4_cb__gtk_reserved5();
-extern void _rgtk4_cb__gtk_reserved6();
-extern void _rgtk4_cb__gtk_reserved7();
-extern void _rgtk4_cb__gtk_reserved8();
+extern void _rgtk4_cb__gtk_reserved5(void);
+extern void _rgtk4_cb__gtk_reserved6(void);
+extern void _rgtk4_cb__gtk_reserved7(void);
+extern void _rgtk4_cb__gtk_reserved8(void);
 extern gboolean _rgtk4_cb_EntryCompletionMatchFunc(GtkEntryCompletion* completion, const char* key, GtkTreeIter* iter, gpointer user_data);
 extern void _rgtk4_cb_ExpressionNotify(gpointer user_data);
 extern gboolean _rgtk4_cb_match(GtkFilter* self, gpointer item);
@@ -658,10 +663,10 @@ extern void _rgtk4_cb_adjust_bounds(GtkRange* range, double new_value);
 extern void _rgtk4_cb_move_slider(GtkRange* range, GtkScrollType scroll);
 extern void _rgtk4_cb_get_range_border(GtkRange* range, GtkBorder* border_);
 extern gboolean _rgtk4_cb_change_value(GtkRange* range, GtkScrollType scroll, double new_value);
-extern void _rgtk4_cb__gtk_recent1();
-extern void _rgtk4_cb__gtk_recent2();
-extern void _rgtk4_cb__gtk_recent3();
-extern void _rgtk4_cb__gtk_recent4();
+extern void _rgtk4_cb__gtk_recent1(void);
+extern void _rgtk4_cb__gtk_recent2(void);
+extern void _rgtk4_cb__gtk_recent3(void);
+extern void _rgtk4_cb__gtk_recent4(void);
 extern void _rgtk4_cb_get_layout_offsets(GtkScale* scale, int* x, int* y);
 extern char* _rgtk4_cb_ScaleFormatValueFunc(GtkScale* scale, double value, gpointer user_data);
 extern gboolean _rgtk4_cb_get_border(GtkScrollable* scrollable, GtkBorder* border);
@@ -795,20 +800,20 @@ extern hb_font_t* _rgtk4_cb_create_hb_font(PangoFont* font);
 extern const char* _rgtk4_cb_get_face_name(PangoFontFace* face);
 extern void _rgtk4_cb_list_sizes(PangoFontFace* face, int** sizes, int* n_sizes);
 extern gboolean _rgtk4_cb_is_synthesized(PangoFontFace* face);
-extern void _rgtk4_cb__pango_reserved3();
-extern void _rgtk4_cb__pango_reserved4();
+extern void _rgtk4_cb__pango_reserved3(void);
+extern void _rgtk4_cb__pango_reserved4(void);
 extern void _rgtk4_cb_list_faces(PangoFontFamily* family, PangoFontFace*** faces, int* n_faces);
 extern gboolean _rgtk4_cb_is_monospace(PangoFontFamily* family);
 extern gboolean _rgtk4_cb_is_variable(PangoFontFamily* family);
 extern PangoFontFace* _rgtk4_cb_get_face(PangoFontFamily* family, const char* name);
-extern void _rgtk4_cb__pango_reserved2();
+extern void _rgtk4_cb__pango_reserved2(void);
 extern PangoFont* _rgtk4_cb_load_font(PangoFontMap* fontmap, PangoContext* context, const PangoFontDescription* desc);
 extern void _rgtk4_cb_list_families(PangoFontMap* fontmap, PangoFontFamily*** families, int* n_families);
 extern PangoFontset* _rgtk4_cb_load_fontset(PangoFontMap* fontmap, PangoContext* context, const PangoFontDescription* desc, PangoLanguage* language);
 extern guint _rgtk4_cb_get_serial(PangoFontMap* fontmap);
 extern PangoFont* _rgtk4_cb_get_font(PangoFontset* fontset, guint wc);
 extern PangoLanguage* _rgtk4_cb_get_language(PangoFontset* fontset);
-extern void _rgtk4_cb__pango_reserved1();
+extern void _rgtk4_cb__pango_reserved1(void);
 extern gboolean _rgtk4_cb_FontsetForeachFunc(PangoFontset* fontset, PangoFont* font, gpointer user_data);
 extern void _rgtk4_cb_draw_glyphs(PangoRenderer* renderer, PangoFont* font, PangoGlyphString* glyphs, int x, int y);
 extern void _rgtk4_cb_draw_rectangle(PangoRenderer* renderer, PangoRenderPart part, int x, int y, int width, int height);
@@ -817,8 +822,12 @@ extern void _rgtk4_cb_draw_shape(PangoRenderer* renderer, PangoAttrShape* attr, 
 extern void _rgtk4_cb_draw_trapezoid(PangoRenderer* renderer, PangoRenderPart part, double y1_, double x11, double x21, double y2, double x12, double x22);
 extern void _rgtk4_cb_draw_glyph(PangoRenderer* renderer, PangoFont* font, PangoGlyph glyph, double x, double y);
 extern void _rgtk4_cb_part_changed(PangoRenderer* renderer, PangoRenderPart part);
-extern void _rgtk4_cb_begin(PangoRenderer* renderer);
-extern void _rgtk4_cb_end(PangoRenderer* renderer);
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_begin(GtkSourceGutterRenderer* renderer, GtkSourceGutterLines* lines);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_end(GtkSourceGutterRenderer* renderer);
+#endif
 extern void _rgtk4_cb_prepare_run(PangoRenderer* renderer, PangoLayoutRun* run);
 extern void _rgtk4_cb_draw_glyph_item(PangoRenderer* renderer, const char* text, PangoGlyphItem* glyph_item, int x, int y);
 extern gboolean _rgtk4_cb_is_static_image(GdkPixbufAnimation* animation);
@@ -831,10 +840,10 @@ extern void _rgtk4_cb_PixbufDestroyNotify(guchar* pixels, gpointer data);
 extern void _rgtk4_cb_size_prepared(GdkPixbufLoader* loader, int width, int height);
 extern void _rgtk4_cb_area_prepared(GdkPixbufLoader* loader);
 extern void _rgtk4_cb_area_updated(GdkPixbufLoader* loader, int x, int y, int width, int height);
-extern void _rgtk4_cb__reserved1();
-extern void _rgtk4_cb__reserved2();
-extern void _rgtk4_cb__reserved3();
-extern void _rgtk4_cb__reserved4();
+extern void _rgtk4_cb__reserved1(void);
+extern void _rgtk4_cb__reserved2(void);
+extern void _rgtk4_cb__reserved3(void);
+extern void _rgtk4_cb__reserved4(void);
 extern void _rgtk4_cb_PixbufModuleFillInfoFunc(GdkPixbufFormat* info);
 extern GdkPixbuf* _rgtk4_cb_PixbufModuleLoadXpmDataFunc(const char** data);
 extern void _rgtk4_cb_PixbufModulePreparedFunc(GdkPixbuf* pixbuf, GdkPixbufAnimation* anim, gpointer user_data);
@@ -844,6 +853,81 @@ extern void _rgtk4_cb_PixbufModuleUpdatedFunc(GdkPixbuf* pixbuf, int x, int y, i
 extern gboolean _rgtk4_cb_PixbufSaveFunc(const gchar* buf, gsize count, GError** error, gpointer data);
 extern void _rgtk4_cb_ParseErrorFunc(const GskParseLocation* start, const GskParseLocation* end, const GError* error, gpointer user_data);
 extern gboolean _rgtk4_cb_PathForeachFunc(GskPathOperation op, const graphene_point_t* pts, gsize n_pts, float weight, gpointer user_data);
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_populate_hover_async(GtkSourceAnnotationProvider* self, GtkSourceAnnotation* annotation, GtkSourceHoverDisplay* display, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_bracket_matched(GtkSourceBuffer* buffer, GtkTextIter* iter, GtkSourceBracketMatchType state);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern char* _rgtk4_cb_get_typed_text(GtkSourceCompletionProposal* proposal);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern char* _rgtk4_cb_get_title(GtkSourceCompletionProvider* self);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern int _rgtk4_cb_get_priority(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern gboolean _rgtk4_cb_is_trigger(GtkSourceIndenter* self, GtkSourceView* view, const GtkTextIter* location, GdkModifierType state, guint keyval);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern gboolean _rgtk4_cb_key_activates(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GtkSourceCompletionProposal* proposal, guint keyval, GdkModifierType state);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_populate_async(GtkSourceHoverProvider* self, GtkSourceHoverContext* context, GtkSourceHoverDisplay* display, GCancellable* cancellable, GAsyncReadyCallback callback, gpointer user_data);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_refilter(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GListModel* model);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_display(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GtkSourceCompletionProposal* proposal, GtkSourceCompletionCell* cell);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern GPtrArray* _rgtk4_cb_list_alternates(GtkSourceCompletionProvider* self, GtkSourceCompletionContext* context, GtkSourceCompletionProposal* proposal);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_query_data(GtkSourceGutterRenderer* renderer, GtkSourceGutterLines* lines, guint line);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_snapshot_line(GtkSourceGutterRenderer* renderer, GtkSnapshot* snapshot, GtkSourceGutterLines* lines, guint line);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_change_view(GtkSourceGutterRenderer* renderer, GtkSourceView* old_view);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_change_buffer(GtkSourceGutterRenderer* renderer, GtkSourceBuffer* old_buffer);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern gboolean _rgtk4_cb_query_activatable(GtkSourceGutterRenderer* renderer, GtkTextIter* iter, GdkRectangle* area);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_indent(GtkSourceIndenter* self, GtkSourceView* view, GtkTextIter* iter);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern gboolean _rgtk4_cb_SchedulerCallback(gint64 deadline, gpointer user_data);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern GtkSourceStyleScheme* _rgtk4_cb_get_style_scheme(GtkSourceStyleSchemeChooser* chooser);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_set_style_scheme(GtkSourceStyleSchemeChooser* chooser, GtkSourceStyleScheme* scheme);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_line_mark_activated(GtkSourceView* view, const GtkTextIter* iter, guint button, GdkModifierType state, gint n_presses);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_show_completion(GtkSourceView* view);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_move_lines(GtkSourceView* view, gboolean down);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_move_words(GtkSourceView* view, gint step);
+#endif
+#ifdef HAVE_GTKSOURCE
+extern void _rgtk4_cb_push_snippet(GtkSourceView* view, GtkSourceSnippet* snippet, GtkTextIter* location);
+#endif
 
 #pragma GCC diagnostic pop
 
