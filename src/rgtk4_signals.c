@@ -115,6 +115,19 @@ static void _rgtk_marshal(GClosure *closure, GValue *return_value,
     case G_TYPE_DOUBLE:
       g_value_set_double(return_value, Rf_asReal(result));
       break;
+    case G_TYPE_OBJECT: {
+      /* GtkDragSource::prepare → GdkContentProvider* (transfer full) */
+      if (TYPEOF(result) == EXTPTRSXP) {
+        gpointer p = R_ExternalPtrAddr(result);
+        if (p)
+          g_value_take_object(return_value, g_object_ref(p));
+      }
+      break;
+    }
+    case G_TYPE_FLAGS:
+      /* e.g. GtkDropTargetAsync::drag-enter / drag-motion → GdkDragAction */
+      g_value_set_flags(return_value, (guint)Rf_asInteger(result));
+      break;
     default:
       break;
     }
