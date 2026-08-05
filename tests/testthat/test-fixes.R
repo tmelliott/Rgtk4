@@ -195,3 +195,55 @@ test_that("gtkLevelBarGetOffsetValue: gboolean->logical, gdouble->double (scalar
   # gdouble out-param must be double, not integer (the bug this fixes)
   expect_type(result$value, "double")
 })
+
+# --- gtkFileChooserDialogRun: titlebar/delete must not CRITICAL --------------
+
+.close_file_chooser_by_title <- function(title, response_id = -6L, destroy = FALSE) {
+  gTimeoutAdd(200L, function() {
+    tops <- gListToRList(gtkWindowListToplevels(), free_list = TRUE)
+    for (w in tops) {
+      tit <- tryCatch(as.character(gtkWindowGetTitle(w)), error = function(e) NA_character_)
+      if (identical(tit, title)) {
+        gtkDialogResponse(w, as.integer(response_id))
+        if (isTRUE(destroy))
+          try(gtkWindowDestroy(w), silent = TRUE)
+      }
+    }
+    FALSE
+  })
+}
+
+test_that("gtkFileChooserDialogRun cancel via response returns cleanly", {
+  skip_if_no_gtk()
+  ## Do not call gtkStartEventLoop() here: nested g_main_loop_run in the
+  ## helper is enough, and the background loop makes automation flaky.
+  parent <- gtkWindowNew()
+  gtkWindowSetTitle(parent, "file-chooser-parent")
+  gtkWidgetSetVisible(parent, FALSE)
+  .close_file_chooser_by_title("file-chooser-cancel", response_id = -6L)
+  res <- gtkFileChooserDialogRun(parent = parent, title = "file-chooser-cancel", action = 0L)
+  expect_type(res, "list")
+  expect_equal(res$response, -6L)
+  expect_null(res$file)
+  gtkWindowDestroy(parent)
+})
+
+test_that("gtkFileChooserDialogRun DELETE_EVENT + destroy does not CRITICAL", {
+  skip_if_no_gtk()
+  parent <- gtkWindowNew()
+  gtkWindowSetTitle(parent, "file-chooser-parent-2")
+  gtkWidgetSetVisible(parent, FALSE)
+  ## Mimic titlebar close: emit delete-event then destroy while the nested
+  ## loop is still unwinding (the path that used to CRITICAL).
+  .close_file_chooser_by_title("file-chooser-delete", response_id = -4L, destroy = TRUE)
+  expect_no_error({
+    res <- gtkFileChooserDialogRun(
+      parent = parent,
+      title = "file-chooser-delete",
+      action = 0L
+    )
+  })
+  expect_equal(res$response, -4L)
+  expect_null(res$file)
+  gtkWindowDestroy(parent)
+})

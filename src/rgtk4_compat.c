@@ -108,6 +108,11 @@ static void _rgtk_dialog_response_cb(GtkDialog *dialog, gint response, gpointer 
   *(data->response_ptr) = response;
 }
 
+static void _rgtk_dialog_destroyed_cb(GtkWidget *widget, gpointer user_data) {
+  (void)widget;
+  *(gboolean *)user_data = TRUE;
+}
+
 SEXP R_gtk_dialog_run(SEXP s_dialog) {
   GtkDialog *dialog = (GtkDialog*)get_ptr(s_dialog);
   if (!dialog || !GTK_IS_DIALOG(dialog)) {
@@ -170,7 +175,10 @@ SEXP R_gtk_file_chooser_dialog_run(SEXP s_parent, SEXP s_title, SEXP s_action) {
   );
 #pragma GCC diagnostic pop
 
-  gtk_window_present(GTK_WINDOW(dialog));
+  g_object_ref(G_OBJECT(dialog));
+
+  gboolean destroyed = FALSE;
+  g_signal_connect(dialog, "destroy", G_CALLBACK(_rgtk_dialog_destroyed_cb), &destroyed);
 
   gint response = GTK_RESPONSE_NONE;
   DialogResponseData data = { .response_ptr = &response };
@@ -178,6 +186,8 @@ SEXP R_gtk_file_chooser_dialog_run(SEXP s_parent, SEXP s_title, SEXP s_action) {
 
   gulong quit_handler = g_signal_connect_swapped(dialog, "response",
                                                  G_CALLBACK(g_main_loop_quit), loop);
+  gulong destroy_quit_handler = g_signal_connect_swapped(dialog, "destroy",
+                                                         G_CALLBACK(g_main_loop_quit), loop);
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpedantic"
@@ -185,11 +195,19 @@ SEXP R_gtk_file_chooser_dialog_run(SEXP s_parent, SEXP s_title, SEXP s_action) {
                                              G_CALLBACK(_rgtk_dialog_response_cb), &data);
 #pragma GCC diagnostic pop
 
+  gtk_window_present(GTK_WINDOW(dialog));
+
   g_main_loop_run(loop);
 
-  g_signal_handler_disconnect(dialog, quit_handler);
-  g_signal_handler_disconnect(dialog, response_handler);
+  if (!destroyed) {
+    g_signal_handler_disconnect(dialog, quit_handler);
+    g_signal_handler_disconnect(dialog, destroy_quit_handler);
+    g_signal_handler_disconnect(dialog, response_handler);
+  }
   g_main_loop_unref(loop);
+
+  if (response == GTK_RESPONSE_NONE)
+    response = GTK_RESPONSE_DELETE_EVENT;
 
   SEXP result = PROTECT(Rf_allocVector(VECSXP, 2));
   SEXP result_names = PROTECT(Rf_allocVector(STRSXP, 2));
@@ -197,7 +215,7 @@ SEXP R_gtk_file_chooser_dialog_run(SEXP s_parent, SEXP s_title, SEXP s_action) {
   SET_VECTOR_ELT(result, 0, Rf_ScalarInteger(response));
   SET_STRING_ELT(result_names, 0, Rf_mkChar("response"));
 
-  if (response == GTK_RESPONSE_ACCEPT) {
+  if (response == GTK_RESPONSE_ACCEPT && !destroyed) {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     GFile *file = gtk_file_chooser_get_file(GTK_FILE_CHOOSER(dialog));
@@ -217,7 +235,10 @@ SEXP R_gtk_file_chooser_dialog_run(SEXP s_parent, SEXP s_title, SEXP s_action) {
 
   Rf_setAttrib(result, R_NamesSymbol, result_names);
 
-  gtk_window_destroy(GTK_WINDOW(dialog));
+  if (!destroyed)
+    gtk_window_destroy(GTK_WINDOW(dialog));
+
+  g_object_unref(G_OBJECT(dialog));
 
   UNPROTECT(2);
   return result;
