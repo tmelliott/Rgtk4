@@ -22,6 +22,25 @@ static inline void* get_ptr_internal(SEXP s, const char* func) {
 
 #define get_ptr(s) get_ptr_internal(s, __func__)
 
+static void _rgtk_object_finalizer(SEXP ext) {
+  gpointer p = R_ExternalPtrAddr(ext);
+  if (p) {
+    g_object_unref(p);
+    R_ClearExternalPtr(ext);
+  }
+}
+
+static void _rgtk_boxed_finalizer(SEXP ext) {
+  SEXP tag = R_ExternalPtrTag(ext);
+  gpointer p = R_ExternalPtrAddr(ext);
+  if (p && tag != R_NilValue) {
+    GType t = g_type_from_name(CHAR(STRING_ELT(tag, 0)));
+    if (t)
+      g_boxed_free(t, p);
+    R_ClearExternalPtr(ext);
+  }
+}
+
 static SEXP gvalue_to_sexp(const GValue *v) {
   GType t = G_VALUE_TYPE(v);
   switch (G_TYPE_FUNDAMENTAL(t)) {
@@ -58,10 +77,25 @@ static SEXP gvalue_to_sexp(const GValue *v) {
     const char *s = g_value_get_string(v);
     return s ? Rf_mkString(s) : R_NilValue;
   }
-  case G_TYPE_OBJECT:
-    return R_MakeExternalPtr(g_value_get_object(v), R_NilValue, R_NilValue);
-  case G_TYPE_BOXED:
-    return R_MakeExternalPtr(g_value_get_boxed(v), R_NilValue, R_NilValue);
+  case G_TYPE_OBJECT: {
+    gpointer obj = g_value_get_object(v);
+    if (!obj) return R_NilValue;
+    g_object_ref(obj);
+    SEXP ext = PROTECT(R_MakeExternalPtr(obj, R_NilValue, R_NilValue));
+    R_RegisterCFinalizerEx(ext, _rgtk_object_finalizer, TRUE);
+    UNPROTECT(1);
+    return ext;
+  }
+  case G_TYPE_BOXED: {
+    gpointer b = g_value_get_boxed(v);
+    if (!b) return R_NilValue;
+    gpointer copy = g_boxed_copy(t, b);
+    SEXP tag = PROTECT(Rf_mkString(g_type_name(t)));
+    SEXP ext = PROTECT(R_MakeExternalPtr(copy, tag, R_NilValue));
+    R_RegisterCFinalizerEx(ext, _rgtk_boxed_finalizer, TRUE);
+    UNPROTECT(2);
+    return ext;
+  }
   case G_TYPE_POINTER:
     return R_MakeExternalPtr(g_value_get_pointer(v), R_NilValue, R_NilValue);
   default:
@@ -77,6 +111,10 @@ static void _rgtk_marshal(GClosure *closure, GValue *return_value,
 
   RClosure *rc = (RClosure *)closure->data;
   if (!rc || rc->fun == R_NilValue) return;
+
+  if (n_param_values > 16) {
+    REprintf("GTK callback: signal has %u params, truncating to 16\n", n_param_values);
+  }
 
   SEXP args[16];
   int nargs = (int)(n_param_values < 16 ? n_param_values : 16);
@@ -98,7 +136,8 @@ static void _rgtk_marshal(GClosure *closure, GValue *return_value,
   }
 
   int err = 0;
-  SEXP result = R_tryEval(call, R_GlobalEnv, &err);
+  SEXP result = PROTECT(R_tryEval(call, R_GlobalEnv, &err));
+  nprot++;
 
   if (err) {
     REprintf("Error in GTK callback function\n");
@@ -112,9 +151,31 @@ static void _rgtk_marshal(GClosure *closure, GValue *return_value,
     case G_TYPE_INT:
       g_value_set_int(return_value, Rf_asInteger(result));
       break;
+    case G_TYPE_ENUM:
+      g_value_set_enum(return_value, Rf_asInteger(result));
+      break;
     case G_TYPE_DOUBLE:
       g_value_set_double(return_value, Rf_asReal(result));
       break;
+    case G_TYPE_OBJECT: {
+      /* GtkDragSource::prepare -> GdkContentProvider* (transfer full) */
+      if (TYPEOF(result) == EXTPTRSXP) {
+      gpointer p = R_ExternalPtrAddr(result);
+      if (p)
+        g_value_take_object(return_value, g_object_ref(p));
+    }
+      break;
+    }
+    case G_TYPE_FLAGS: {
+      /* e.g. GtkDropTargetAsync::drag-enter / drag-motion -> GdkDragAction */
+      int fv = Rf_asInteger(result);
+      if (fv < 0) {
+        REprintf("GTK callback: negative flags value ignored\n");
+      } else {
+        g_value_set_flags(return_value, (guint)fv);
+      }
+      break;
+    }
     default:
       break;
     }
